@@ -1,0 +1,76 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+#body{
+    /*가운데 정렬!!*/
+    margin: 0 auto;
+    width:960px;
+    height:1000px;
+     
+}
+
+#body>.rowlist:nth-child(1){
+    margin-top:100px;
+}
+.rowlist{
+   margin-top:20px;
+
+    width:100%;
+    height:340px;
+
+    display:flex;
+    justify-items:center;
+}
+
+.rowlist>a{
+    display:inline-block;
+
+    width:224px;
+    height:340px;
+
+    margin:0 auto;
+
+    padding:22px 8px 0;
+
+    color:#000000;
+
+    border:1px solid #777777;
+    border-radius:20px;
+
+    font:13px "Noto Sans";
+}
+
+.rowlist>a>img{
+    width:200px;
+    height:200px;
+
+    margin:0 auto;
+}
+
+.rowlist>a>div:nth-child(2){
+    width:190px;
+    height:41px;
+
+    margin: 0 auto;
+
+    text-align:center;
+    color:#000000;
+    font:15px "Noto Sans";
+
+}
+
+.rowlist>a>div:nth-child(3){
+    width:80px;
+    height:30px;
+
+    margin:0 auto;
+    margin-top:10px;
+    
+    text-align:center;
+
+    color:#000000;
+    font:24px Roboto;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 세부내역</title>
+    <link href="main_header.css" rel="stylesheet" type="text/css"/>
+    <link href="product_detail.css" rel="stylesheet" type="text/css"/>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <div id="header"></div>
+    <div id="body">
+        <div id="image_box"><img src="images/아이스크림/하겐)초코마카롱파인트.jpg"/></div>
+        <div id="product_content">
+            <div id="product_title">하겐)초코마카롱파인트</div>
+            <table>
+                <tbody id="product_detail">
+                    <tr id="show_cost">
+                        <td>판매가</td>
+                        <td>15900</td>
+                    </tr>
+                    <tr id="select_count">
+                        <td>상품수량</td>
+                        <td><img src="images/btn_count_down.png"/><input id="count" type="text" value="1"/><img src="images/btn_count_up.png"/></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="total">
+                <span>총 상품금액</span>
+                <span>15900</span>
+            </div>
+            <div id="purchase">
+                <button>바로구매</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+     //jquery 라이브러리를 사용하여 load()메서드를 호출
+    //load()메서드는 ajax를 사용하여 지정된 파일을 비동기적으로 로드하고, 지정된 요소에 내용을 삽입
+    $("#header").load("main_header.html");
+    //window.onload는 DOM뿐만 아니라 리소스 호출도 완료되었을 때 실행
+        //$(window).onload()는 jquery에서 틀린문법인지 인식안됨
+        $(window).on("load",function(){
+            //10진법 숫자로
+            let count=parseInt($("#count").attr('value'),10);
+            let cost=parseInt($("#show_cost>td:nth-child(2)").text());
+            $("#select_count>td:nth-child(2)>img:nth-child(1)").on('click',function(e){
+                //무조건 최소 숫자가 1이 나오게
+                if(count>=2){
+                    count=count-1;
+                    $("#count").attr('value',count);
+                    $("#total>span:nth-child(2)").text(count*cost);
+                }
+               
+            });
+
+            $("#select_count>td:nth-child(2)>img:nth-child(3)").on('click',function(e){
+                count=count+1;
+                $("#count").attr('value',count);
+                $("#total>span:nth-child(2)").text(count*cost);
+                
+            });
+
+        });
+</script>

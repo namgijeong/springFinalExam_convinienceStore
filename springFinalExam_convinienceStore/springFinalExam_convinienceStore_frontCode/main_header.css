@@ -1,0 +1,118 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+#header{
+    /*가운데 정렬!!*/
+    margin: 0 auto;
+    width:1280px;
+    height:164px;
+
+}
+
+#header_section1{
+    display:flex;
+    justify-content: center;
+
+    /*부모한테 100% 맞추기*/
+    width:100%;
+    height:164px;
+}
+
+#header_logo{
+    background-image:url('/images/convenienceStore_24hours_icon.png');
+    background-size:contain;
+    width:150px;
+    height:164px;
+}
+
+#header_title{
+    color:#600624;
+    font:"Malgun Gothic";
+    font-size:30px;
+    font-weight:400px;
+
+    /*옆이미지랑 나란히 맞추려면*/
+    line-height:164px;
+}
+
+#account_menu{
+    display:flex;
+    justify-content: center;
+
+    width:400px;
+    height:15px;
+
+   
+    line-height:164px;
+}
+
+#account_menu>a{
+    display:inline-block;
+
+    margin-left:10px;
+
+    cursor:pointer;
+
+    color:#600624;
+    font:"Malgun Gothic";
+    font-size:16px;
+    font-weight:100px;
+}
+
+#header_section2{
+
+    /*부모한테 100% 맞추기*/
+    width:1280px;
+    height:56px;
+
+    background-color:#600624;
+
+    
+}
+
+#food_category{
+    width:725px;
+    height:56px;
+    /*자기자신이 중앙에*/
+    margin:0 auto;
+    /*자식들도 중앙엔*/
+    display:flex;
+    justify-content: center;
+
+    
+}
+
+.fixed_header_section2{
+    /*
+        위에 있는 요소를 position: fixed;를 이용하여 고정하면 왼쪽에 위치합니다.
+        left: 50%;를 추가하여 시작 위치를 정가운데로 만듭니다.
+        transform: translateX( -50% );를 추가하여 요소 크기의 50%만큼 왼쪽을 이동합니다.
+    */
+    width:1280px;
+    position: fixed;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    /*고정된 위치에 있으면서 다른것들을 가려야하므로*/
+    z-index: 1;
+}
+#food_category>a{
+    display:inline-block;
+
+    width:134px;
+    height:52px;
+
+    color:white;
+    font:"Malgun Gothic";
+    font-size:16px;
+    font-weight:100px;
+
+    text-align:center;
+    /*글자를 중앙에 놓기 위해서 글자의 총 높이 조절*/
+    line-height:52px;
+
+    cursor:pointer;
+}
