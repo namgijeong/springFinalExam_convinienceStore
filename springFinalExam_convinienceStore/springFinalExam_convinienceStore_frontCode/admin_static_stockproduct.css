@@ -385,6 +385,76 @@ ul,li{
 
     background-color:white;
 }
+
+#select_count{
+    width:1000px;
+    height:300px;
+
+    margin:0 auto;
+    text-align:center;
+
+    display:flex;
+    justify-content: center;
+
+    
+}
+#select_count>select:nth-child(1){
+    display:inline-block;
+    width:200px;
+    height:100px;
+
+    text-align:center;
+    
+}
+
+#select_count>div:nth-child(2){
+    width:100px;
+    height:100px;
+
+    text-align:center;
+
+   
+    line-height:100px;
+}
+#select_count>div:nth-child(3){
+    width:200px;
+    height:100px;
+
+    text-align:center;
+
+    padding-top:40px;
+    
+}
+#select_count>div:nth-child(3) img{
+    /*부모한테가 아닌 자식요소에게 각각 vertical-align을 해야 높이가 정렬된다.*/
+    vertical-align:bottom;
+}
+#select_count>div:nth-child(3) input{
+    width:40px;
+    height:33px;
+
+    line-height:33px;
+    /*부모한테가 아닌 자식요소에게 각각 vertical-align을 해야 높이가 정렬된다.*/
+    vertical-align:bottom;
+
+    text-align:center;
+}
+#input_product{
+    width:112px;
+    height:80px;
+    padding-top:20px;
+}
+#input_product>button{
+    display:inline-block;
+    width:100%;
+    height:100%;
+
+    background-color:#63afea;
+    color:white;
+
+    border:1px solid skyblue;
+    border-radius:40px;
+}
 /*스크롤바안보이게 브라우저에서 숨기기*/
 #subnavigation_result_body{-ms-overflow-style:none; }
 #subnavigation_result_body::-webkit-scrollbar { display:none; }
@@ -429,120 +499,4 @@ ul,li{
     line-height:56px;
 }
 
-#subnavigation_list{
-    width:100%;
-    height:650px;
 
-    border-top:2px solid black;
-}
-#subnavigation_list_title{
-    padding-left:50px;
-    height:50px;
-    border-bottom:2px solid rgba(198, 231, 244, 0.5);
-    color:gray;
-    
-}
-#subnavigation_list_title>span{
-    display:inline-block;
-
-    padding-left:30px;
-    
-    width:100px;
-    height:50px;
-
-    text-align:center;
-
-    text-overflow:ellipsis;
-    overflow:hidden;
-    white-space:nowrap;
-
-    font-size: 16px;
-    font-weight: 700;
-    color:#2c405a;
-
-    line-height:50px;
-}
-#subnavigation_list_title>span:nth-child(1){
-    width:200px;
-}
-#subnavigation_list_title>span:nth-child(2){
-    width:200px;
-}
-#subnavigation_list_title>span:nth-child(3){
-    width:200px;
-}
-#subnavigation_list_title>span:nth-child(4){
-    width:350px;
-}
-
-.subnavigation_list_detail{
-    padding-left:50px;
-    height:50px;
-    
-    border-bottom:2px solid rgba(198, 231, 244, 0.5);
-    color:#383838;
-    
-}
-.subnavigation_list_detail>span{
-    display:inline-block;
-
-    padding-left:30px;
-    width:100px;
-
-    text-align:center;
-
-    text-overflow:ellipsis;
-    overflow:hidden;
-    white-space:nowrap;
-
-    font-size:16px;
-    line-height:50px;
-}
-/*span 첫번째가 아니라 동일선상이니까 checkbox까지 포함한순서*/
-.subnavigation_list_detail>span:nth-child(1){
-    width:200px;
-}
-.subnavigation_list_detail>span:nth-child(2){
-    width:200px;
-}
-.subnavigation_list_detail>span:nth-child(3){
-    width:200px;
-}
-.subnavigation_list_detail>span:nth-child(4){
-    width:350px;
-}
-
-#page_action{
-    width:1090px;
-    height:58px;
-    padding:0 8px;
-
-    display:flex;
-    color:#000000de;
-}
-
-#page_arrow{
-    height:100%;
-    width:300px;
-    margin-left:500px;
-
-    display:flex;
-}
-#page_arrow>span{
-    display:inline-block;
-    width:36px;
-    height:36px;
-    
-    
-}
-#page_arrow>span{
-    background-image:url("images/blackLeftArrowIcon.png");
-    background-size:contain;
-    background-repeat:no-repeat;
-}
-#page_arrow>span:nth-child(2){
-    background-image:url("images/blackRightArrowIcon.png");
-    background-size:contain;
-    background-repeat:no-repeat;
-    margin-left:100px;
-}

@@ -7,7 +7,7 @@
     <title>관리자페이지-매출통계</title>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-    <link href="admin_static_monthlycount.css" rel="stylesheet"/>
+    <link href="admin_static_stockproduct.css" rel="stylesheet"/>
     <style>
         
     </style>
@@ -92,7 +92,55 @@
 
             <div id="subnavigation_result_body">
 
-                
+                <div id="select_count">
+
+                    <select>
+                        <option value="1001">오뚜기)진라면매운컵</option>
+                        <option value="1002">농심)신라면큰사발컵</option>
+                        <option value="1003">오뚜기)열라면컵</option>
+                        <option value="1004">삼양)삼양라면소컵</option>
+                        <option value="1005">농심)라면왕김통깨</option>
+                        <option value="1006">농심)무파마큰사발컵</option>
+                        <option value="1007">오뚜기)열려라참깨라면컵</option>
+                        <option value="1008">팔도)틈새라면매운김치컵</option>
+                        <option value="2001">도)백종원백반한판</option>
+                        <option value="2002">도)동원리챔앤참치김치</option>
+                        <option value="2003">주)3XL크랩참치마요삼각</option>
+                        <option value="2004">도)백종원우삼겹비빔밥</option>
+                        <option value="2005">도)고깃집맛소금구이정식</option>
+                        <option value="2006">도)백종원바싹불고기한판</option>
+                        <option value="2007">김)백종원비빔밥한줄</option>
+                        <option value="2008">김)자이언트삼색유부초밥</option>
+                        <option value="3001">롯데)치토스바베큐맛164g</option>
+                        <option value="3002">롯데)도리토스나쵸치즈</option>
+                        <option value="3003">롯데)초코파이</option>
+                        <option value="3004">오리온)포카칩어니언66g</option>
+                        <option value="3005">농심)포스틱84g</option>
+                        <option value="3006">롯데)꼬깔콘고소한맛134g</option>
+                        <option value="3007">농심)바나나킥딸기60g</option>
+                        <option value="3008">롯데)빼빼로녹차</option>
+                        <option value="4001">코카)스프라이트P500ml</option>
+                        <option value="4002">코카)파워에이드캔240ml</option>
+                        <option value="4003">코카)코카제로레몬캔355ml</option>
+                        <option value="4004">롯데)펩시콜라제로캔355ml</option>
+                        <option value="4005">코카)조지아카페라떼캔</option>
+                        <option value="4006">농심)웰치제로포도P500</option>
+                        <option value="4007">동아)데미소다피치캔250ml</option>
+                        <option value="4008">HK)티로그복숭아홍차P500</option>
+                        <option value="5001">하겐)블루베리타르트미니</option>
+                        <option value="5002">해태)부라보콘바닐라</option>
+                        <option value="5003">빙그레)메로나</option>
+                        <option value="5004">롯데푸드)빠삐코</option>
+                        <option value="5005">초코)초코비파인트</option>
+                        <option value="5006">하겐)초코마카롱파인트</option>
+                        <option value="5007">롯데)수박바</option>
+                        <option value="5008">롯데)찰떡아이스</option>
+                    </select>
+                    
+                    <div>상품수량</div>
+                    <div><img src="images/btn_count_down.png"/><input id="count" type="text" value="1"/><img src="images/btn_count_up.png"/></div>
+                    <div id="input_product"><button>입고완료</button></div>
+                </div>
 
                 
                 
@@ -191,7 +239,28 @@ $(document).ready(function(){
 </script>
     
 <script>
-    
+    $(window).on("load",function(){
+            //10진법 숫자로
+            let count=parseInt($("#count").attr('value'),10);
+            let cost=parseInt($("#show_cost>div:nth-child(3)").text());
+            $("#select_count>div:nth-child(3)>img:nth-child(1)").on('click',function(e){
+                //무조건 최소 숫자가 1이 나오게
+                if(count>=2){
+                    count=count-1;
+                    $("#count").attr('value',count);
+                    
+                }
+               
+            });
+
+            $("#select_count>div:nth-child(3)>img:nth-child(3)").on('click',function(e){
+                count=count+1;
+                $("#count").attr('value',count);
+                
+                
+            });
+
+        });
 </script>
 
 </html>
