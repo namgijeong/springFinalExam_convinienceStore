@@ -1,0 +1,25 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+#body{
+     /*가운데 정렬!!*/
+     margin: 200px auto;
+     width:1280px;
+    height:1000px;
+    
+}
+
+#new_product_banner1{
+   
+    margin-top:200px;
+
+    width:1280px;
+    height:966px;
+
+    background-image:url("/images/banner1.png");
+    background-size:cover;
+}

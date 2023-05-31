@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<!-- 오류발생 이유는 tomcat 10버전에서 servlet 관련 패키지이름이 변경되어서
+		기존 jstl 모듈 연동이 안된다고 한다. 수정방법은 내장 톰캣버전을 9으로 하는
+
+		spring boot 로 버전을 낮추는 것이다.
+		https://pingfanzhilu.tistory.com/entry/Spring-%EC%8A%A4%ED%94%84%EB%A7%81-javalangNoClassDefFoundError-javaxservletjsptagextTagLibraryValidator-%EC%97%90%EB%9F%AC-%ED%95%B4%EA%B2%B0-%EB%B0%A9%EB%B2%95tomcat-jstl-%EB%B2%84%EC%A0%84-%EC%B6%A9%EB%8F%8C-1
+		-->
+		<version>2.6.7</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.example</groupId>
+	<artifactId>finalExamConvinienceStore</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>finalExamConvinienceStore</name>
+	<description>Demo project for Spring Boot</description>
+	<properties>
+		<java.version>11</java.version>
+		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jdbc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+		<!-- MyBatis 라이브러리 -->
+
+		<dependency>
+		
+		    <groupId>org.mybatis</groupId>
+		
+		    <artifactId>mybatis</artifactId>
+		
+		    <version>3.5.0</version>
+		
+		</dependency>
+		
+		
+		
+		<!-- 마이바티스와 스프링 연동을 위한 라이브러리 -->
+		
+		<dependency>
+		
+		    <groupId>org.mybatis</groupId>
+		
+		    <artifactId>mybatis-spring</artifactId>
+		
+		    <version>2.0.0</version>
+		
+		</dependency>
+		<!-- jstl때문에 parent 버전을 낮춘걸 써야해서 -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<!-- <dependency>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+			<scope>runtime</scope>
+		</dependency> -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+		</dependency>
+		<!-- datasource를 쓰기위해 -->
+		<dependency>
+	    	<groupId>org.apache.tomcat</groupId>
+	    	<artifactId>tomcat-jdbc</artifactId>
+	    </dependency>
+		<!-- <dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency> -->
+		<dependency> 
+			<groupId>javax.servlet.jsp.jstl</groupId>
+			<artifactId>jstl-api</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<!-- jstl 인식을 안하면 꼭 이것도 넣어보자 -->
+	    <dependency>
+	        <groupId>taglibs</groupId>
+	        <artifactId>standard</artifactId>
+	        <version>1.1.2</version>
+	    </dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
