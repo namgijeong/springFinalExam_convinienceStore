@@ -51,7 +51,7 @@ a:hover{
     width:230px;
     height:100px;
     background-size:contain;
-    background-image: url("images/convenienceStore_24hours_icon.png");
+    background-image: url("../../images/convenienceStore_24hours_icon.png");
     background-repeat:no-repeat;
     /*background-color:#ffdb49;*/
     position:fixed;
@@ -234,14 +234,14 @@ ul,li{
 */
 .rightarrow{
     
-    background-image:url("images/blackRightArrowIcon.png");
+    background-image:url("../../images/blackRightArrowIcon.png");
     background-repeat:no-repeat;
     background-size:contain;
 }
 .downarrow{
     
     
-    background-image:url("images/blackDownArrowIcon.png");
+    background-image:url("../../images/blackDownArrowIcon.png");
     background-repeat:no-repeat;
     background-size:contain;
 }
@@ -476,7 +476,7 @@ ul,li{
     font-size:16px;
 }
 #subnavigation_search>span{
-    background-image:url("images/findGlassSearchIcon.png");
+    background-image:url("../../images/findGlassSearchIcon.png");
     background-size:contain;
     background-repeat:no-repeat;
     display:inline-block;

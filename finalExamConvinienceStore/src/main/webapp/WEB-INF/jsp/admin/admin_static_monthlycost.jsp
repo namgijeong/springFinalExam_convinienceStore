@@ -1,3 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +12,7 @@
     <title>관리자페이지-매출통계</title>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-    <link href="admin_static_monthlycount.css" rel="stylesheet"/>
+    <link href="${path}/resources/css/admin/admin_static_monthlycost.css" rel="stylesheet"/>
     <style>
         
     </style>
@@ -21,30 +26,31 @@
                 <li class="menu"> 
                     <a><span>하루</span><span class="rightarrow"></span></a>
                     <ul class="hide">
-                        <li class="normalcolor"><a>판매량</a></li>
-                        <li class="normalcolor"><a>매출액</a></li>
+                        <li class="normalcolor"><a href="${path}/admin_dailycount">판매량</a></li>
+                        <li class="normalcolor"><a href="${path}/admin_dailycost">매출액</a></li>
                     </ul>
                 </li>
                 
                 <li class="menu"> 
                     <a><span>한달</span><span class="rightarrow"></span></a>
                     <ul class="hide">
-                        <li class="normalcolor"><a>판매량</a></li>
-                        <li class="normalcolor"><a>매출액</a></li>
+                        <li class="normalcolor"><a href="${path}/admin_monthlycount">판매량</a></li>
+                        <li class="normalcolor"><a href="${path}/admin_monthlycost">매출액</a></li>
                         
                     </ul>
                 </li>
                 
                 <li class="menu"> 
-                    <a><span>최다 판매제품</span><span class="rightarrow"></span></a>
+                    <a href="${path}/admin_firstproduct"><span>최다 판매제품</span><span class="rightarrow"></span></a>
                     <ul class="hide">
                         
                         
+                        
                     </ul>
                 </li>
                 
                 <li class="menu"> 
-                    <a><span>제품 입고</span><span class="rightarrow"></span></a>
+                    <a href="${path}/admin_stockproduct"><span>제품 입고</span><span class="rightarrow"></span></a>
                     <ul class="hide">
                         
                         
@@ -56,7 +62,7 @@
         <div id="subnavigation_result">
             <div id="subnavigation_result_header">
                 <div id="subnavigation_result_title">
-                    <h2>한달판매량</h2>
+                    <h2>한달매출액</h2>
                     <span>yyyy-mm-dd 형식으로 입력해주세요</span>
                 </div>
                 <!-- <div id="subnavigation_how_array">
@@ -221,7 +227,7 @@ $(document).ready(function(){
                     ],
                     datasets: [
                         { //데이터
-                            label: '품목별 한달 판매량', //차트 제목
+                            label: '품목별 한달 매출액', //차트 제목
                             fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
                             data: [
                                 //여기에 데이터들을 넣어주자

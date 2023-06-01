@@ -234,14 +234,14 @@ ul,li{
 */
 .rightarrow{
     
-    background-image:url("images/blackRightArrowIcon.png");
+    background-image:url("../../images/blackRightArrowIcon.png");
     background-repeat:no-repeat;
     background-size:contain;
 }
 .downarrow{
     
     
-    background-image:url("images/blackDownArrowIcon.png");
+    background-image:url("../../images/blackDownArrowIcon.png");
     background-repeat:no-repeat;
     background-size:contain;
 }
@@ -406,7 +406,7 @@ ul,li{
     font-size:16px;
 }
 #subnavigation_search>span{
-    background-image:url("images/findGlassSearchIcon.png");
+    background-image:url("../../images/findGlassSearchIcon.png");
     background-size:contain;
     background-repeat:no-repeat;
     display:inline-block;
@@ -536,12 +536,12 @@ ul,li{
     
 }
 #page_arrow>span{
-    background-image:url("images/blackLeftArrowIcon.png");
+    background-image:url("../../images/blackLeftArrowIcon.png");
     background-size:contain;
     background-repeat:no-repeat;
 }
 #page_arrow>span:nth-child(2){
-    background-image:url("images/blackRightArrowIcon.png");
+    background-image:url("../../images/blackRightArrowIcon.png");
     background-size:contain;
     background-repeat:no-repeat;
     margin-left:100px;

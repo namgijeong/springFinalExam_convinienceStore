@@ -25,22 +25,22 @@
                 <li class="menu"> 
                     <a><span>하루</span><span class="rightarrow"></span></a>
                     <ul class="hide">
-                        <li class="normalcolor"><a>판매량</a></li>
-                        <li class="normalcolor"><a>매출액</a></li>
+                        <li class="normalcolor" ><a href="${path}/admin_dailycount">판매량</a></li>
+                        <li class="normalcolor" ><a href="${path}/admin_dailycost">매출액</a></li>
                     </ul>
                 </li>
                 
                 <li class="menu"> 
                     <a><span>한달</span><span class="rightarrow"></span></a>
                     <ul class="hide">
-                        <li class="normalcolor"><a>판매량</a></li>
-                        <li class="normalcolor"><a>매출액</a></li>
+                        <li class="normalcolor"><a href="${path}/admin_monthlycount">판매량</a></li>
+                        <li class="normalcolor"><a href="${path}/admin_monthlycost">매출액</a></li>
                         
                     </ul>
                 </li>
                 
                 <li class="menu"> 
-                    <a><span>최다 판매제품</span><span class="rightarrow"></span></a>
+                    <a href="${path}/admin_firstproduct"><span>최다 판매제품</span><span class="rightarrow"></span></a>
                     <ul class="hide">
                        
                         
@@ -49,7 +49,7 @@
                 </li>
                 
                 <li class="menu"> 
-                    <a><span>제품 입고</span><span class="rightarrow"></span></a>
+                    <a href="${path}/admin_stockproduct"><span>제품 입고</span><span class="rightarrow"></span></a>
                     <ul class="hide">
                         
                         
@@ -134,6 +134,8 @@
     let prev;
     let flag2=0;
     let prev2;
+    
+    
 // html dom 이 다 로딩된 후 실행된다
 $(document).ready(function(){
     // menu 클래스 바로 하위에 있는 a 태그를 클릭했을때
@@ -209,6 +211,8 @@ $(document).ready(function(){
             console.log($(this).attr('backgroundColor'));
         }
    });
+   
+  
     
 });
 </script>

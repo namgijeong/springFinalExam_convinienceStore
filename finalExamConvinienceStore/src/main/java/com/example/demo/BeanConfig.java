@@ -14,6 +14,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import myapp.dao.MemberDao;
+
 @Configuration
 
 public class BeanConfig {
@@ -31,43 +33,52 @@ public class BeanConfig {
 		ds.setPassword("spring5");
 		return ds;
 	}
-
+	
 	@Bean
-	public SqlSessionFactoryBean sqlSessionFactoryBean() {
-		SqlSessionFactoryBean ssf = new SqlSessionFactoryBean();
-		ssf.setDataSource(dataSource());
-
-		ssf.setConfigLocation(applicationContext.getResource("classpath:/mybatis-config.xml"));
-		/*
-		 * 이런 형식으로 resources에 지정하는것이 맞는지????
-		 */
-		/*
-		 * ssf.setMapperLocations(applicationContext.getResources("myapp.dao/*.xml"));
-		 */
-
-		return ssf;
+	public MemberDao memberDao() {
+		return new MemberDao(dataSource());
 	}
 
-	@Bean
+	/*
+	 * @Bean public SqlSessionFactoryBean sqlSessionFactoryBean() {
+	 * SqlSessionFactoryBean ssf = new SqlSessionFactoryBean();
+	 * ssf.setDataSource(dataSource());
+	 * 
+	 * ssf.setConfigLocation(applicationContext.getResource(
+	 * "classpath:/mybatis-config.xml"));
+	 * 
+	 * 이런 형식으로 resources에 지정하는것이 맞는지????
+	 * 
+	 * 
+	 * ssf.setMapperLocations(applicationContext.getResources("myapp.dao/*.xml"));
+	 * 
+	 * 
+	 * return ssf; }
+	 */
 
-	public SqlSessionTemplate sqlSession(SqlSessionFactory sqlSessionFactory) {
+	/*
+	 * @Bean
+	 * 
+	 * public SqlSessionTemplate sqlSession(SqlSessionFactory sqlSessionFactory) {
+	 * 
+	 * return new SqlSessionTemplate(sqlSessionFactory);
+	 * 
+	 * }
+	 */
 
-		return new SqlSessionTemplate(sqlSessionFactory);
-
-	}
-
-	@Bean
-	public SqlSessionFactory sqlSessionFactory() throws Exception {
-		SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
-		sqlSessionFactory.setDataSource(dataSource());
-		return (SqlSessionFactory) sqlSessionFactory.getObject();
-	}
+	/*
+	 * @Bean public SqlSessionFactory sqlSessionFactory() throws Exception {
+	 * SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
+	 * sqlSessionFactory.setDataSource(dataSource()); return (SqlSessionFactory)
+	 * sqlSessionFactory.getObject(); }
+	 */
 
 	/*
 	 * @Bean public UserMapper userMapper() throws Exception { SqlSessionTemplate
 	 * sessionTemplate = new SqlSessionTemplate(sqlSessionFactory()); return
 	 * sessionTemplate.getMapper(UserMapper.class); }
 	 */
+
 	/*
 	 * @Bean public UserMapper userMapper() {
 	 * 
@@ -79,7 +90,7 @@ public class BeanConfig {
 	 * SqlSessionTemplate(sqlSessionFactory()); return
 	 * sessionTemplate.getMapper(UserMapper.class); }
 	 */
-	
+
 	/*
 	 * < bean id = "userService"class="myapp.service.impl.UserServiceImpl"><
 	 * property name = "userDao"ref="userMapper"/></bean>
