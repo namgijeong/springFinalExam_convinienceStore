@@ -10,8 +10,9 @@
 		<typeAlias type="myapp.domain.User" alias="User" />
 	</typeAliases>
 	
+	
 	<mappers>
-		<mapper resource="myapp/dao/UserMapper.xml"/>
+		<mapper class="myapp.dao.UserDao" />
 	</mappers>
 	
 </configuration>

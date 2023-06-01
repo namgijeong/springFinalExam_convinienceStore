@@ -1,3 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="path" value="${pageContext.request.contextPath}"/>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,14 +10,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>상품 세부내역</title>
-    <link href="main_header.css" rel="stylesheet" type="text/css"/>
-    <link href="product_detail.css" rel="stylesheet" type="text/css"/>
+    <link href="${path}/resources/css/main_header.css" rel="stylesheet" type="text/css"/>
+    <link href="${path}/resources/css/buy/product_detail.css" rel="stylesheet" type="text/css"/>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 <body>
-    <div id="header"></div>
+    <!-- <div id="header"></div> -->
+    <jsp:include page="${path}/WEB-INF/jsp/header/main_header.jsp" />
     <div id="body">
-        <div id="image_box"><img src="images/아이스크림/하겐)초코마카롱파인트.jpg"/></div>
+        <div id="image_box"><img src="${path}/resources/images/아이스크림/하겐)초코마카롱파인트.jpg"/></div>
         <div id="product_content">
             <div id="product_title">하겐)초코마카롱파인트</div>
             <table>
@@ -23,7 +29,7 @@
                     </tr>
                     <tr id="select_count">
                         <td>상품수량</td>
-                        <td><img src="images/btn_count_down.png"/><input id="count" type="text" value="1"/><img src="images/btn_count_up.png"/></td>
+                        <td><img src="${path}/resources/images/btn_count_down.png"/><input id="count" type="text" value="1"/><img src="${path}/resources/images/btn_count_up.png"/></td>
                     </tr>
                 </tbody>
             </table>
@@ -42,7 +48,8 @@
 <script>
      //jquery 라이브러리를 사용하여 load()메서드를 호출
     //load()메서드는 ajax를 사용하여 지정된 파일을 비동기적으로 로드하고, 지정된 요소에 내용을 삽입
-    $("#header").load("main_header.html");
+   /*  $("#header").load("main_header.html"); */
+     
     //window.onload는 DOM뿐만 아니라 리소스 호출도 완료되었을 때 실행
         //$(window).onload()는 jquery에서 틀린문법인지 인식안됨
         $(window).on("load",function(){

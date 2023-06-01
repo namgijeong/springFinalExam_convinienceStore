@@ -22,7 +22,7 @@
 }
 
 #header_logo{
-    background-image:url('/images/convenienceStore_24hours_icon.png');
+    background-image:url('../../images/convenienceStore_24hours_icon.png');
     background-size:contain;
     width:150px;
     height:164px;

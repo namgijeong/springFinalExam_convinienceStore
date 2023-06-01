@@ -9,24 +9,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>편의점-메인페이지</title>
-    <link href="${path}/resources/css/main_page.css" rel="stylesheet" type="text/css"/>
+    <title>밥 구매</title>
     <link href="${path}/resources/css/header/main_header.css" rel="stylesheet" type="text/css"/>
+    <link href="${path}/resources/css/buy/buy_rice.css" rel="stylesheet" type="text/css"/>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 <body>
-   <!--  <div id="header">
-    </div> -->
-     <jsp:include page="${path}/WEB-INF/jsp/header/main_header.jsp" />
+    <!-- <div id="header"></div> -->
+    <jsp:include page="${path}/WEB-INF/jsp/header/main_header.jsp" />
     <div id="body">
-        <div id="new_product_banner1">
-            
-            
+        <div class="rowlist">
+            <a><img src="${path}/resources/images/밥/도)백종원백반한판.jpg"/><div>도)백종원백반한판</div><div>4500원</div></a>
+            <a><img src="${path}/resources/images/밥/도)동원리챔앤참치김치.jpg"/><div>도)동원리챔앤참치김치</div><div>5500원</div></a>
+            <a><img src="${path}/resources/images/밥/주)3XL크랩참치마요삼각.jpg"/><div>주)3XL크랩참치마요삼각</div><div>1600원</div></a>
+            <a><img src="${path}/resources/images/밥/도)백종원우삼겹비빔밥.jpg"/><div>도)백종원우삼겹비빔밥</div><div>4500원</div></a>
+        </div>
+        <div class="rowlist">
+            <a><img src="${path}/resources/images/밥/도)고깃집맛소금구이정식.jpg"/><div>도)고깃집맛소금구이정식</div><div>5500원</div></a>
+            <a><img src="${path}/resources/images/밥/도)백종원바싹불고기한판.jpg"/><div>도)백종원바싹불고기한판</div><div>4500원</div></a>
+            <a><img src="${path}/resources/images/밥/김)백종원비빔밥한줄.jpg"/><div>김)백종원비빔밥한줄</div><div>2900원</div></a>
+            <a><img src="${path}/resources/images/밥/김)자이언트삼색유부초밥.jpg"/><div>김)자이언트삼색유부초밥</div><div>5900원</div></a>
         </div>
     </div>
 </body>
 </html>
+
 <script>
+
 	//jquery 라이브러리를 사용하여 load()메서드를 호출
 	//load()메서드는 ajax를 사용하여 지정된 파일을 비동기적으로 로드하고, 지정된 요소에 내용을 삽입
 	/*$("#header").load("main_header.html");*/
@@ -57,6 +66,5 @@
 		    }
 		});
 	});
- 
+    
 </script>
-            

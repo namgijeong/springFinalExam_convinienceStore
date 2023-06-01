@@ -17,7 +17,8 @@ import org.springframework.context.annotation.Configuration;
 import myapp.dao.MemberDao;
 
 @Configuration
-
+@MapperScan(basePackages = {"myapp.dao"})
+@ComponentScan(basePackages = { "myapp.domain" ,"myapp.service.impl","myapp.service"} )
 public class BeanConfig {
 
 	@Autowired
@@ -34,65 +35,19 @@ public class BeanConfig {
 		return ds;
 	}
 	
+	
 	@Bean
-	public MemberDao memberDao() {
-		return new MemberDao(dataSource());
+    public SqlSessionFactoryBean sqlSessionFactory(DataSource dataSource) throws IOException {
+        SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
+        factoryBean.setDataSource(dataSource);
+        factoryBean.setConfigLocation(applicationContext.getResource("classpath:/mybatis-config.xml"));
+        factoryBean.setMapperLocations(applicationContext.getResources("classpath:/mybatis/mappers/*.xml"));
+        return factoryBean;
+
+    }
+	
+	@Bean
+	public SqlSessionTemplate sqlSession(SqlSessionFactory sqlSessionFactory) {
+		return new SqlSessionTemplate(sqlSessionFactory);
 	}
-
-	/*
-	 * @Bean public SqlSessionFactoryBean sqlSessionFactoryBean() {
-	 * SqlSessionFactoryBean ssf = new SqlSessionFactoryBean();
-	 * ssf.setDataSource(dataSource());
-	 * 
-	 * ssf.setConfigLocation(applicationContext.getResource(
-	 * "classpath:/mybatis-config.xml"));
-	 * 
-	 * 이런 형식으로 resources에 지정하는것이 맞는지????
-	 * 
-	 * 
-	 * ssf.setMapperLocations(applicationContext.getResources("myapp.dao/*.xml"));
-	 * 
-	 * 
-	 * return ssf; }
-	 */
-
-	/*
-	 * @Bean
-	 * 
-	 * public SqlSessionTemplate sqlSession(SqlSessionFactory sqlSessionFactory) {
-	 * 
-	 * return new SqlSessionTemplate(sqlSessionFactory);
-	 * 
-	 * }
-	 */
-
-	/*
-	 * @Bean public SqlSessionFactory sqlSessionFactory() throws Exception {
-	 * SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
-	 * sqlSessionFactory.setDataSource(dataSource()); return (SqlSessionFactory)
-	 * sqlSessionFactory.getObject(); }
-	 */
-
-	/*
-	 * @Bean public UserMapper userMapper() throws Exception { SqlSessionTemplate
-	 * sessionTemplate = new SqlSessionTemplate(sqlSessionFactory()); return
-	 * sessionTemplate.getMapper(UserMapper.class); }
-	 */
-
-	/*
-	 * @Bean public UserMapper userMapper() {
-	 * 
-	 * UserMapper userMapper= new UserMapper();
-	 * userMapper.setMapperInterface("myapp.dao.UserDao");
-	 * 
-	 * 
-	 * SqlSessionTemplate sessionTemplate = new
-	 * SqlSessionTemplate(sqlSessionFactory()); return
-	 * sessionTemplate.getMapper(UserMapper.class); }
-	 */
-
-	/*
-	 * < bean id = "userService"class="myapp.service.impl.UserServiceImpl"><
-	 * property name = "userDao"ref="userMapper"/></bean>
-	 */
 }

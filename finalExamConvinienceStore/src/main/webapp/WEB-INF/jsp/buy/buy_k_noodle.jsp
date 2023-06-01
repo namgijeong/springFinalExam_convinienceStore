@@ -9,24 +9,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>편의점-메인페이지</title>
-    <link href="${path}/resources/css/main_page.css" rel="stylesheet" type="text/css"/>
+    <title>라면 구매</title>
     <link href="${path}/resources/css/header/main_header.css" rel="stylesheet" type="text/css"/>
+    <link href="${path}/resources/css/buy/buy_k_noodle.css" rel="stylesheet" type="text/css"/>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 <body>
-   <!--  <div id="header">
-    </div> -->
-     <jsp:include page="${path}/WEB-INF/jsp/header/main_header.jsp" />
+    <!-- <div id="header"></div> -->
+    <jsp:include page="${path}/WEB-INF/jsp/header/main_header.jsp" />
     <div id="body">
-        <div id="new_product_banner1">
-            
-            
+        <div class="rowlist">
+            <a><img src="${path}/resources/images/라면/오뚜기)진라면매운컵.jpg"/><div>오뚜기)진라면매운컵</div><div>1300원</div></a>
+            <a><img src="${path}/resources/images/라면/농심)신라면큰사발컵.jpg"/><div>농심)신라면큰사발컵</div><div>1400원</div></a>
+            <a><img src="${path}/resources/images/라면/오뚜기)열라면컵.jpg"/><div>오뚜기)열라면컵</div><div>1300원</div></a>
+            <a><img src="${path}/resources/images/라면/삼양)삼양라면소컵.jpg"/><div>삼양)삼양라면소컵</div><div>1100원</div></a>
+        </div>
+        <div class="rowlist">
+            <a><img src="${path}/resources/images/라면/농심)라면왕김통깨.jpg"/><div>농심)라면왕김통깨</div><div>1700원</div></a>
+            <a><img src="${path}/resources/images/라면/농심)무파마큰사발컵.jpg"/><div>농심)무파마큰사발컵</div><div>1800원</div></a>
+            <a><img src="${path}/resources/images/라면/오뚜기)열려라참깨라면컵.jpg"/><div>오뚜기)열려라참깨라면컵</div><div>2000원</div></a>
+            <a><img src="${path}/resources/images/라면/팔도)틈새라면매운김치컵.jpg"/><div>팔도)틈새라면매운김치컵</div><div>1700원</div></a>
         </div>
     </div>
 </body>
 </html>
+
 <script>
+   
 	//jquery 라이브러리를 사용하여 load()메서드를 호출
 	//load()메서드는 ajax를 사용하여 지정된 파일을 비동기적으로 로드하고, 지정된 요소에 내용을 삽입
 	/*$("#header").load("main_header.html");*/
@@ -57,6 +66,5 @@
 		    }
 		});
 	});
- 
 </script>
-            
+    

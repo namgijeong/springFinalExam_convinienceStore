@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,23 +11,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>편의점-메인페이지</title>
-    <link href="${path}/resources/css/main_page.css" rel="stylesheet" type="text/css"/>
+    <link href="${path}/resources/css/mypage/mypage_update.css" rel="stylesheet" type="text/css"/>
     <link href="${path}/resources/css/header/main_header.css" rel="stylesheet" type="text/css"/>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 <body>
-   <!--  <div id="header">
+    <!-- <div id="header">
     </div> -->
      <jsp:include page="${path}/WEB-INF/jsp/header/main_header.jsp" />
     <div id="body">
-        <div id="new_product_banner1">
-            
-            
+        <div id="login_box">
+            <div id="login_title">내 계정정보 바꾸기</div>
+            <div id="login_content">
+                <div>
+                    <span class="login_subtitle">아이디</span><input class="login_input" type="text" placeholder="아이디"/>
+                    <div>아이디가 중복됩니다.</div>
+                </div>
+                <div>
+                    <span class="login_subtitle">비밀번호</span><input class="login_input" type="password" placeholder="비밀번호"/>
+                </div>
+                <button id="gologin" type="button" >수정완료</button>
+            </div>
         </div>
     </div>
 </body>
 </html>
 <script>
+
 	//jquery 라이브러리를 사용하여 load()메서드를 호출
 	//load()메서드는 ajax를 사용하여 지정된 파일을 비동기적으로 로드하고, 지정된 요소에 내용을 삽입
 	/*$("#header").load("main_header.html");*/
@@ -57,6 +68,18 @@
 		    }
 		});
 	});
- 
+</script>
+
+<script>
+    $(window).on("load",function(){
+        change_id=$(".login_input:eq(0)");
+        //비동기 통신으로 아이디가 db에 있는지 조회
+        //값이 있으면
+           /*  $("#login_content>div>div").addClass('how_warning_id'); */
+        //값이 없으면
+            /* $("#login_content>div>div").removeClass('how_warning_id'); */
+        
+    
+    });
 </script>
             

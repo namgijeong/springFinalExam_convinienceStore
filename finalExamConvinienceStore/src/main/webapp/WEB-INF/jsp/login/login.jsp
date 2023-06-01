@@ -10,23 +10,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>편의점-메인페이지</title>
-    <link href="${path}/resources/css/main_page.css" rel="stylesheet" type="text/css"/>
+    <link href="${path}/resources/css/login/login.css" rel="stylesheet" type="text/css"/>
     <link href="${path}/resources/css/header/main_header.css" rel="stylesheet" type="text/css"/>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 <body>
-   <!--  <div id="header">
+    <!-- <div id="header">
     </div> -->
-     <jsp:include page="${path}/WEB-INF/jsp/header/main_header.jsp" />
+    <jsp:include page="${path}/WEB-INF/jsp/header/main_header.jsp" />
     <div id="body">
-        <div id="new_product_banner1">
-            
-            
+        <div id="login_box">
+            <div id="login_title">회원 로그인</div>
+            <div id="login_content">
+                <div>
+                    <span class="login_subtitle">아이디</span><input class="login_input" type="text" placeholder="아이디"/>
+                </div>
+                <div>
+                    <span class="login_subtitle">비밀번호</span><input class="login_input" type="password" placeholder="비밀번호"/>
+                </div>
+                <button id="gologin" type="button" >로그인하기</button>
+            </div>
         </div>
     </div>
 </body>
 </html>
 <script>
+
 	//jquery 라이브러리를 사용하여 load()메서드를 호출
 	//load()메서드는 ajax를 사용하여 지정된 파일을 비동기적으로 로드하고, 지정된 요소에 내용을 삽입
 	/*$("#header").load("main_header.html");*/
@@ -57,6 +66,5 @@
 		    }
 		});
 	});
- 
 </script>
             
