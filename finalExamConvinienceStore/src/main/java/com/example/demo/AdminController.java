@@ -6,13 +6,14 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import myapp.dao.MemberDao;
 import myapp.dao.UserDao;
 
 @Controller
 public class AdminController {
 	
 	@Autowired 
-	UserDao userDao;
+	MemberDao memberDao;
 	
 	@RequestMapping(value="/admin_dailycost")
 	public String adminDailyCost() {

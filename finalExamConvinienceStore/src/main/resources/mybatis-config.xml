@@ -7,12 +7,14 @@
 	<setting name="mapUnderscoreToCamelCase" value="true"/>
 	</settings>
 	<typeAliases>
-		<typeAlias type="myapp.domain.User" alias="User" />
+		
+		<typeAlias type="myapp.domain.Member" alias="Member" />
 	</typeAliases>
 	
 	
 	<mappers>
-		<mapper class="myapp.dao.UserDao" />
+		
+		<mapper class="myapp.dao.MemberDao" />
 	</mappers>
 	
 </configuration>

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+    pageEncoding="utf-8" session="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 
@@ -16,7 +16,12 @@
 </head>
 <body>
     <!-- <div id="header"></div> -->
-    <jsp:include page="${path}/WEB-INF/jsp/header/main_header.jsp" />
+    
+    <!-- 그냥 세션값도 이렇게 넘겨주어야 적용이 된다. -->	
+    <jsp:include page="${path}/WEB-INF/jsp/header/main_header.jsp" >
+    	 <jsp:param name="isLogin" value="isLogin" />
+    	 <jsp:param name="memberType" value="${session.memberType}" />
+    </jsp:include>
     <div id="body">
         <div class="rowlist">
             <a href=""><img src="${path}/resources/images/음료수/코카)스프라이트P500ml.jpg"/><div>코카)스프라이트P500ml</div><div>2000원</div></a>

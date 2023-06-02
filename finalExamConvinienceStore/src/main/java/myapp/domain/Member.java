@@ -1,63 +1,52 @@
 package myapp.domain;
 
 
-	
-
-	import java.time.LocalDateTime;
 
 	public class Member {
-		private Long id;
-		private String email;
-		private String password;
+		private int primaryId;
+		private String memberId;
+		private int memberType;
+		private int memberActive;
 		private String name;
-		private LocalDateTime registerDateTime;
-		
-		public Member(String email, String password, String name,LocalDateTime regDateTime) {
-			this.email=email;
-			this.password=password;
-			this.name=name;
-			this.registerDateTime=regDateTime;
+		private String password;
+		public String getMemberId() {
+			return memberId;
 		}
-
-		public Long getId() {
-			return id;
+		public void setMemberId(String memberId) {
+			this.memberId = memberId;
 		}
-
-		public void setId(Long id) {
-			this.id = id;
+		public int getMemberType() {
+			return memberType;
 		}
-
-		public String getEmail() {
-			return email;
+		public void setMemberType(int memberType) {
+			this.memberType = memberType;
 		}
-
-		public void setEmail(String email) {
-			this.email = email;
+		public int getMemberActive() {
+			return memberActive;
 		}
-
-		public String getPassword() {
-			return password;
+		public void setMemberActive(int memberActive) {
+			this.memberActive = memberActive;
 		}
-
-		public void setPassword(String password) {
-			this.password = password;
-		}
-
 		public String getName() {
 			return name;
 		}
-
 		public void setName(String name) {
 			this.name = name;
 		}
-
-		public LocalDateTime getRegisterDateTime() {
-			return registerDateTime;
+		public String getPassword() {
+			return password;
 		}
-
-		public void setRegisterDateTime(LocalDateTime registerDateTime) {
-			this.registerDateTime = registerDateTime;
+		public void setPassword(String password) {
+			this.password = password;
 		}
+		public int getPrimaryId() {
+			return primaryId;
+		}
+		public void setPrimaryId(int primaryId) {
+			this.primaryId = primaryId;
+		}
+		
+		
 		
 		
 	}

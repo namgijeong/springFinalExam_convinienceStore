@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+    pageEncoding="utf-8" session="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 
@@ -18,7 +18,11 @@
 <body>
     <!-- <div id="header">
     </div> -->
-     <jsp:include page="${path}/WEB-INF/jsp/header/main_header.jsp" />
+     <!-- 그냥 세션값도 이렇게 넘겨주어야 적용이 된다. -->	
+    <jsp:include page="${path}/WEB-INF/jsp/header/main_header.jsp" >
+    	 <jsp:param name="isLogin" value="${session.isLogin}" />
+    	 <jsp:param name="memberType" value="${session.memberType}" />
+    </jsp:include>
     <div id="body">
         <div id="login_box">
             <div id="login_title">내 계정정보 바꾸기</div>

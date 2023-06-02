@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import myapp.dao.MemberDao;
+
 
 @Configuration
 @MapperScan(basePackages = {"myapp.dao"})
@@ -29,9 +29,9 @@ public class BeanConfig {
 		DataSource ds = new DataSource();
 		ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
 		ds.setUrl(
-				"jdbc:mysql://localhost/spring5fs?useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=utf8&serverTimexone=UTC");
-		ds.setUsername("spring5");
-		ds.setPassword("spring5");
+				"jdbc:mysql://localhost/conviniencestore?useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=utf8&serverTimexone=UTC");
+		ds.setUsername("root");
+		ds.setPassword("1234");
 		return ds;
 	}
 	

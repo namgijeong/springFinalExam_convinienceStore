@@ -8,9 +8,25 @@
         <div id="header_logo"></div>
         <div id="header_title">Convenience Store</div>
         <div id="account_menu">
-            <a href="${path}/login">로그인</a>
+	    <c:choose>
+			<c:when test="${isLogin eq 'true'}">
+				<a href="${path}/logout">로그아웃</a>
+			</c:when>
+			<c:otherwise>
+				<a href="${path}/login">로그인</a>
+			</c:otherwise>
+		</c:choose> 
+            
             <a href="${path}/mypage">마이페이지</a>
-            <a href="${path}/admin_dailycost">관리자페이지</a>
+        <c:choose>
+			<c:when test="${memberType eq 2}">
+				<a href="${path}/admin_dailycost">관리자페이지</a>
+			</c:when>
+			<c:otherwise>
+				
+			</c:otherwise>
+		</c:choose> 
+            
         </div>
     </div>
     

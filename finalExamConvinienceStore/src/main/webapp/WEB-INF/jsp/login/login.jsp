@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+    pageEncoding="utf-8" session="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
+<c:set var="login_fail" value="${login_fail}"/>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,25 +18,35 @@
 <body>
     <!-- <div id="header">
     </div> -->
-    <jsp:include page="${path}/WEB-INF/jsp/header/main_header.jsp" />
+  
+	<!-- 그냥 세션값도 이렇게 넘겨주어야 적용이 된다. -->	
+    <jsp:include page="${path}/WEB-INF/jsp/header/main_header.jsp" >
+    	 <jsp:param name="isLogin" value="${session.isLogin}" />
+    	 <jsp:param name="memberType" value="${session.memberType}" />
+    </jsp:include>
     <div id="body">
-        <div id="login_box">
+        <form id="login_box" action="/loginOk">
             <div id="login_title">회원 로그인</div>
             <div id="login_content">
                 <div>
-                    <span class="login_subtitle">아이디</span><input class="login_input" type="text" placeholder="아이디"/>
+                    <span class="login_subtitle">아이디</span><input name="id" class="login_input" type="text" placeholder="아이디"/>
                 </div>
                 <div>
-                    <span class="login_subtitle">비밀번호</span><input class="login_input" type="password" placeholder="비밀번호"/>
+                    <span class="login_subtitle">비밀번호</span><input name="password" class="login_input" type="password" placeholder="비밀번호"/>
                 </div>
-                <button id="gologin" type="button" >로그인하기</button>
+                <button id="gologin" type="submit" >로그인하기</button>
             </div>
-        </div>
+        </form>
     </div>
 </body>
 </html>
-<script>
-
+<script type="javascript">
+	<c:if test="${login_fail eq 'fail'}">
+			alert("로그인 실패");
+	</c:if>
+	/* if(${login_fail} == "fail"){
+		
+	} */
 	//jquery 라이브러리를 사용하여 load()메서드를 호출
 	//load()메서드는 ajax를 사용하여 지정된 파일을 비동기적으로 로드하고, 지정된 요소에 내용을 삽입
 	/*$("#header").load("main_header.html");*/
