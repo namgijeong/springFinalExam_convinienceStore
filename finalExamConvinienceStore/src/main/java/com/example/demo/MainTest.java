@@ -6,14 +6,12 @@ import java.util.List;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
-import myapp.domain.User;
-import myapp.service.UserService;
 
 public class MainTest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-AbstractApplicationContext ctx= new GenericXmlApplicationContext("classpath*:applicationContext.xml");
+/*AbstractApplicationContext ctx= new GenericXmlApplicationContext("classpath*:applicationContext.xml");
 		
 		UserService userService=(UserService)ctx.getBean("userService");
 		
@@ -28,6 +26,7 @@ AbstractApplicationContext ctx= new GenericXmlApplicationContext("classpath*:app
 		for(int i=0;i<users.size();++i) {
 			System.out.println(users.get(i));
 		}
+		*/
 	}
 	
 

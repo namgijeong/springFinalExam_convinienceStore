@@ -23,16 +23,16 @@
     </jsp:include>
     <div id="body">
         <div class="rowlist">
-            <a><img src="${path}/resources/images/과자/롯데)치토스바베큐맛164g.jpg"/><div>롯데)치토스바베큐맛164g</div><div>3400원</div></a>
-            <a><img src="${path}/resources/images/과자/롯데)도리토스나쵸치즈.jpg"/><div>롯데)도리토스나쵸치즈</div><div>1700원</div></a>
-            <a><img src="${path}/resources/images/과자/롯데)초코파이.jpg"/><div>롯데)초코파이</div><div>5400원</div></a>
-            <a><img src="${path}/resources/images/과자/오리온)포카칩어니언66g.jpg"/><div>오리온)포카칩어니언66g</div><div>1700원</div></a>
+            <a href="/product_detail?inventory_code=3001"><img src="${path}/resources/images/과자/롯데)치토스바베큐맛164g.jpg"/><div>롯데)치토스바베큐맛164g</div><div>3400원</div></a>
+            <a href="/product_detail?inventory_code=3002"><img src="${path}/resources/images/과자/롯데)도리토스나쵸치즈.jpg"/><div>롯데)도리토스나쵸치즈</div><div>1700원</div></a>
+            <a href="/product_detail?inventory_code=3003"><img src="${path}/resources/images/과자/롯데)초코파이.jpg"/><div>롯데)초코파이</div><div>5400원</div></a>
+            <a href="/product_detail?inventory_code=3004"><img src="${path}/resources/images/과자/오리온)포카칩어니언66g.jpg"/><div>오리온)포카칩어니언66g</div><div>1700원</div></a>
         </div>
         <div class="rowlist">
-            <a><img src="${path}/resources/images/과자/농심)포스틱84g.jpg"/><div>농심)포스틱84g</div><div>1700원</div></a>
-            <a><img src="${path}/resources/images/과자/롯데)꼬깔콘고소한맛134g.jpg"/><div>롯데)꼬깔콘고소한맛134g</div><div>3400원</div></a>
-            <a><img src="${path}/resources/images/과자/농심)바나나킥딸기60g.jpg"/><div>농심)바나나킥딸기60g</div><div>1700원</div></a>
-            <a><img src="${path}/resources/images/과자/롯데)빼빼로녹차.jpg"/><div>롯데)빼빼로녹차</div><div>1700원</div></a>
+            <a href="/product_detail?inventory_code=3005"><img src="${path}/resources/images/과자/농심)포스틱84g.jpg"/><div>농심)포스틱84g</div><div>1700원</div></a>
+            <a href="/product_detail?inventory_code=3006"><img src="${path}/resources/images/과자/롯데)꼬깔콘고소한맛134g.jpg"/><div>롯데)꼬깔콘고소한맛134g</div><div>3400원</div></a>
+            <a href="/product_detail?inventory_code=3007"><img src="${path}/resources/images/과자/농심)바나나킥딸기60g.jpg"/><div>농심)바나나킥딸기60g</div><div>1700원</div></a>
+            <a href="/product_detail?inventory_code=3008"><img src="${path}/resources/images/과자/롯데)빼빼로녹차.jpg"/><div>롯데)빼빼로녹차</div><div>1700원</div></a>
         </div>
     </div>
 </body>

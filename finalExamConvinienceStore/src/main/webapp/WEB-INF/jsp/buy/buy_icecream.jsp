@@ -24,16 +24,16 @@
     
     <div id="body">
         <div class="rowlist">
-            <a><img src="${path}/resources/images/아이스크림/하겐)블루베리타르트미니.jpg"/><div>하겐)블루베리타르트미니</div><div>5900원</div></a>
-            <a><img src="${path}/resources/images/아이스크림/해태)부라보콘바닐라.jpg"/><div>해태)부라보콘바닐라</div><div>2200원</div></a>
-            <a><img src="${path}/resources/images/아이스크림/빙그레)메로나.jpg"/><div>빙그레)메로나</div><div>1500원</div></a>
-            <a><img src="${path}/resources/images/아이스크림/롯데푸드)빠삐코.jpg"/><div>롯데푸드)빠삐코</div><div>1500원</div></a>
+            <a href="/product_detail?inventory_code=5001"><img src="${path}/resources/images/아이스크림/하겐)블루베리타르트미니.jpg"/><div>하겐)블루베리타르트미니</div><div>5900원</div></a>
+            <a href="/product_detail?inventory_code=5002"><img src="${path}/resources/images/아이스크림/해태)부라보콘바닐라.jpg"/><div>해태)부라보콘바닐라</div><div>2200원</div></a>
+            <a href="/product_detail?inventory_code=5003"><img src="${path}/resources/images/아이스크림/빙그레)메로나.jpg"/><div>빙그레)메로나</div><div>1500원</div></a>
+            <a href="/product_detail?inventory_code=5004"><img src="${path}/resources/images/아이스크림/롯데푸드)빠삐코.jpg"/><div>롯데푸드)빠삐코</div><div>1500원</div></a>
         </div>
         <div class="rowlist">
-            <a><img src="${path}/resources/images/아이스크림/초코)초코비파인트.jpg"/><div>초코)초코비파인트</div><div>12400원</div></a>
-            <a><img src="${path}/resources/images/아이스크림/하겐)초코마카롱파인트.jpg"/><div>하겐)초코마카롱파인트</div><div>15900원</div></a>
-            <a><img src="${path}/resources/images/아이스크림/롯데)수박바.jpg"/><div>롯데)수박바</div><div>1200원</div></a>
-            <a><img src="${path}/resources/images/아이스크림/롯데)찰떡아이스.jpg"/><div>롯데)찰떡아이스</div><div>2200원</div></a>
+            <a href="/product_detail?inventory_code=5005"><img src="${path}/resources/images/아이스크림/초코)초코비파인트.jpg"/><div>초코)초코비파인트</div><div>12400원</div></a>
+            <a href="/product_detail?inventory_code=5006"><img src="${path}/resources/images/아이스크림/하겐)초코마카롱파인트.jpg"/><div>하겐)초코마카롱파인트</div><div>15900원</div></a>
+            <a href="/product_detail?inventory_code=5007"><img src="${path}/resources/images/아이스크림/롯데)수박바.jpg"/><div>롯데)수박바</div><div>1200원</div></a>
+            <a href="/product_detail?inventory_code=5008"><img src="${path}/resources/images/아이스크림/롯데)찰떡아이스.jpg"/><div>롯데)찰떡아이스</div><div>2200원</div></a>
         </div>
     </div>
 </body>

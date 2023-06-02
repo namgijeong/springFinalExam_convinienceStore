@@ -23,16 +23,16 @@
     </jsp:include>
     <div id="body">
         <div class="rowlist">
-            <a><img src="${path}/resources/images/라면/오뚜기)진라면매운컵.jpg"/><div>오뚜기)진라면매운컵</div><div>1300원</div></a>
-            <a><img src="${path}/resources/images/라면/농심)신라면큰사발컵.jpg"/><div>농심)신라면큰사발컵</div><div>1400원</div></a>
-            <a><img src="${path}/resources/images/라면/오뚜기)열라면컵.jpg"/><div>오뚜기)열라면컵</div><div>1300원</div></a>
-            <a><img src="${path}/resources/images/라면/삼양)삼양라면소컵.jpg"/><div>삼양)삼양라면소컵</div><div>1100원</div></a>
+            <a href="/product_detail?inventory_code=1001"><img src="${path}/resources/images/라면/오뚜기)진라면매운컵.jpg"/><div>오뚜기)진라면매운컵</div><div>1300원</div></a>
+            <a href="/product_detail?inventory_code=1002"><img src="${path}/resources/images/라면/농심)신라면큰사발컵.jpg"/><div>농심)신라면큰사발컵</div><div>1400원</div></a>
+            <a href="/product_detail?inventory_code=1003"><img src="${path}/resources/images/라면/오뚜기)열라면컵.jpg"/><div>오뚜기)열라면컵</div><div>1300원</div></a>
+            <a href="/product_detail?inventory_code=1004"><img src="${path}/resources/images/라면/삼양)삼양라면소컵.jpg"/><div>삼양)삼양라면소컵</div><div>1100원</div></a>
         </div>
         <div class="rowlist">
-            <a><img src="${path}/resources/images/라면/농심)라면왕김통깨.jpg"/><div>농심)라면왕김통깨</div><div>1700원</div></a>
-            <a><img src="${path}/resources/images/라면/농심)무파마큰사발컵.jpg"/><div>농심)무파마큰사발컵</div><div>1800원</div></a>
-            <a><img src="${path}/resources/images/라면/오뚜기)열려라참깨라면컵.jpg"/><div>오뚜기)열려라참깨라면컵</div><div>2000원</div></a>
-            <a><img src="${path}/resources/images/라면/팔도)틈새라면매운김치컵.jpg"/><div>팔도)틈새라면매운김치컵</div><div>1700원</div></a>
+            <a href="/product_detail?inventory_code=1005"><img src="${path}/resources/images/라면/농심)라면왕김통깨.jpg"/><div>농심)라면왕김통깨</div><div>1700원</div></a>
+            <a href="/product_detail?inventory_code=1006"><img src="${path}/resources/images/라면/농심)무파마큰사발컵.jpg"/><div>농심)무파마큰사발컵</div><div>1800원</div></a>
+            <a href="/product_detail?inventory_code=1007"><img src="${path}/resources/images/라면/오뚜기)열려라참깨라면컵.jpg"/><div>오뚜기)열려라참깨라면컵</div><div>2000원</div></a>
+            <a href="/product_detail?inventory_code=1008"><img src="${path}/resources/images/라면/팔도)틈새라면매운김치컵.jpg"/><div>팔도)틈새라면매운김치컵</div><div>1700원</div></a>
         </div>
     </div>
 </body>

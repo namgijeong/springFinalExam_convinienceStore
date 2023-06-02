@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>상품 세부내역</title>
-    <link href="${path}/resources/css/main_header.css" rel="stylesheet" type="text/css"/>
+    <link href="${path}/resources/css/header/main_header.css" rel="stylesheet" type="text/css"/>
     <link href="${path}/resources/css/buy/product_detail.css" rel="stylesheet" type="text/css"/>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
@@ -22,14 +22,14 @@
     	 <jsp:param name="memberType" value="${session.memberType}" />
     </jsp:include>
     <div id="body">
-        <div id="image_box"><img src="${path}/resources/images/아이스크림/하겐)초코마카롱파인트.jpg"/></div>
+        <div id="image_box"><img src="${path}${Product.imageUrl}"/></div>
         <div id="product_content">
-            <div id="product_title">하겐)초코마카롱파인트</div>
+            <div id="product_title">${Product.inventoryName}</div>
             <table>
                 <tbody id="product_detail">
                     <tr id="show_cost">
                         <td>판매가</td>
-                        <td>15900</td>
+                        <td>${Product.price}</td>
                     </tr>
                     <tr id="select_count">
                         <td>상품수량</td>
@@ -39,7 +39,7 @@
             </table>
             <div id="total">
                 <span>총 상품금액</span>
-                <span>15900</span>
+                <span>1</span>
             </div>
             <div id="purchase">
                 <button>바로구매</button>

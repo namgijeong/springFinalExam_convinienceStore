@@ -23,16 +23,16 @@
     </jsp:include>
     <div id="body">
         <div class="rowlist">
-            <a><img src="${path}/resources/images/밥/도)백종원백반한판.jpg"/><div>도)백종원백반한판</div><div>4500원</div></a>
-            <a><img src="${path}/resources/images/밥/도)동원리챔앤참치김치.jpg"/><div>도)동원리챔앤참치김치</div><div>5500원</div></a>
-            <a><img src="${path}/resources/images/밥/주)3XL크랩참치마요삼각.jpg"/><div>주)3XL크랩참치마요삼각</div><div>1600원</div></a>
-            <a><img src="${path}/resources/images/밥/도)백종원우삼겹비빔밥.jpg"/><div>도)백종원우삼겹비빔밥</div><div>4500원</div></a>
+            <a href="/product_detail?inventory_code=2001"><img src="${path}/resources/images/밥/도)백종원백반한판.jpg"/><div>도)백종원백반한판</div><div>4500원</div></a>
+            <a href="/product_detail?inventory_code=2002"><img src="${path}/resources/images/밥/도)동원리챔앤참치김치.jpg"/><div>도)동원리챔앤참치김치</div><div>5500원</div></a>
+            <a href="/product_detail?inventory_code=2003"><img src="${path}/resources/images/밥/주)3XL크랩참치마요삼각.jpg"/><div>주)3XL크랩참치마요삼각</div><div>1600원</div></a>
+            <a href="/product_detail?inventory_code=2004"><img src="${path}/resources/images/밥/도)백종원우삼겹비빔밥.jpg"/><div>도)백종원우삼겹비빔밥</div><div>4500원</div></a>
         </div>
         <div class="rowlist">
-            <a><img src="${path}/resources/images/밥/도)고깃집맛소금구이정식.jpg"/><div>도)고깃집맛소금구이정식</div><div>5500원</div></a>
-            <a><img src="${path}/resources/images/밥/도)백종원바싹불고기한판.jpg"/><div>도)백종원바싹불고기한판</div><div>4500원</div></a>
-            <a><img src="${path}/resources/images/밥/김)백종원비빔밥한줄.jpg"/><div>김)백종원비빔밥한줄</div><div>2900원</div></a>
-            <a><img src="${path}/resources/images/밥/김)자이언트삼색유부초밥.jpg"/><div>김)자이언트삼색유부초밥</div><div>5900원</div></a>
+            <a href="/product_detail?inventory_code=2005"><img src="${path}/resources/images/밥/도)고깃집맛소금구이정식.jpg"/><div>도)고깃집맛소금구이정식</div><div>5500원</div></a>
+            <a href="/product_detail?inventory_code=2006"><img src="${path}/resources/images/밥/도)백종원바싹불고기한판.jpg"/><div>도)백종원바싹불고기한판</div><div>4500원</div></a>
+            <a href="/product_detail?inventory_code=2007"><img src="${path}/resources/images/밥/김)백종원비빔밥한줄.jpg"/><div>김)백종원비빔밥한줄</div><div>2900원</div></a>
+            <a href="/product_detail?inventory_code=2008"><img src="${path}/resources/images/밥/김)자이언트삼색유부초밥.jpg"/><div>김)자이언트삼색유부초밥</div><div>5900원</div></a>
         </div>
     </div>
 </body>

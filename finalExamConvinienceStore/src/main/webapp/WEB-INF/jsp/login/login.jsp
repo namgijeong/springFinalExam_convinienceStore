@@ -40,13 +40,11 @@
     </div>
 </body>
 </html>
-<script type="javascript">
-	<c:if test="${login_fail eq 'fail'}">
-			alert("로그인 실패");
-	</c:if>
-	/* if(${login_fail} == "fail"){
-		
-	} */
+<script type="text/javascript">
+	let login_fail="${login_fail}";
+	 if(login_fail == "fail"){
+		alert("로그인 실패");
+	} 
 	//jquery 라이브러리를 사용하여 load()메서드를 호출
 	//load()메서드는 ajax를 사용하여 지정된 파일을 비동기적으로 로드하고, 지정된 요소에 내용을 삽입
 	/*$("#header").load("main_header.html");*/

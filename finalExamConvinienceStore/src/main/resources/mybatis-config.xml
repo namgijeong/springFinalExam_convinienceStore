@@ -9,12 +9,14 @@
 	<typeAliases>
 		
 		<typeAlias type="myapp.domain.Member" alias="Member" />
+		<typeAlias type="myapp.domain.Product" alias="Product" />
 	</typeAliases>
 	
 	
 	<mappers>
 		
 		<mapper class="myapp.dao.MemberDao" />
+		<mapper class="myapp.dao.ProductDao" />
 	</mappers>
 	
 </configuration>

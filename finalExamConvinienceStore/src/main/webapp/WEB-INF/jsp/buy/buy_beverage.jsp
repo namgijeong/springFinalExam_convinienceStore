@@ -24,16 +24,16 @@
     </jsp:include>
     <div id="body">
         <div class="rowlist">
-            <a href=""><img src="${path}/resources/images/음료수/코카)스프라이트P500ml.jpg"/><div>코카)스프라이트P500ml</div><div>2000원</div></a>
-            <a href=""><img src="${path}/resources/images/음료수/코카)파워에이드캔240ml.jpg"/><div>코카)파워에이드캔240ml</div><div>1200원</div></a>
-            <a href=""><img src="${path}/resources/images/음료수/코카)코카제로레몬캔355ml.jpg"/><div>코카)코카제로레몬캔355ml</div><div>2000원</div></a>
-            <a href=""><img src="${path}/resources/images/음료수/롯데)펩시콜라제로캔355ml.jpg"/><div>롯데)펩시콜라제로캔355ml</div><div>1900원</div></a>
+            <a href="/product_detail?inventory_code=4001"><img src="${path}/resources/images/음료수/코카)스프라이트P500ml.jpg"/><div>코카)스프라이트P500ml</div><div>2000원</div></a>
+            <a href="/product_detail?inventory_code=4002"><img src="${path}/resources/images/음료수/코카)파워에이드캔240ml.jpg"/><div>코카)파워에이드캔240ml</div><div>1200원</div></a>
+            <a href="/product_detail?inventory_code=4003"><img src="${path}/resources/images/음료수/코카)코카제로레몬캔355ml.jpg"/><div>코카)코카제로레몬캔355ml</div><div>2000원</div></a>
+            <a href="/product_detail?inventory_code=4004"><img src="${path}/resources/images/음료수/롯데)펩시콜라제로캔355ml.jpg"/><div>롯데)펩시콜라제로캔355ml</div><div>1900원</div></a>
         </div>
         <div class="rowlist">
-            <a href=""><img src="${path}/resources/images/음료수/코카)조지아카페라떼캔.jpg"/><div>코카)조지아카페라떼캔</div><div>1200원</div></a>
-            <a href=""><img src="${path}/resources/images/음료수/농심)웰치제로포도P500.jpg"/><div>농심)웰치제로포도P500</div><div>2000원</div></a>
-            <a href=""><img src="${path}/resources/images/음료수/동아)데미소다피치캔250ml.jpg"/><div>동아)데미소다피치캔250ml</div><div>1600원</div></a>
-            <a href=""><img src="${path}/resources/images/음료수/HK)티로그복숭아홍차P500.jpg"/><div>HK)티로그복숭아홍차P500</div><div>2200원</div></a>
+            <a href="/product_detail?inventory_code=4005"><img src="${path}/resources/images/음료수/코카)조지아카페라떼캔.jpg"/><div>코카)조지아카페라떼캔</div><div>1200원</div></a>
+            <a href="/product_detail?inventory_code=4006"><img src="${path}/resources/images/음료수/농심)웰치제로포도P500.jpg"/><div>농심)웰치제로포도P500</div><div>2000원</div></a>
+            <a href="/product_detail?inventory_code=4007"><img src="${path}/resources/images/음료수/동아)데미소다피치캔250ml.jpg"/><div>동아)데미소다피치캔250ml</div><div>1600원</div></a>
+            <a href="/product_detail?inventory_code=4008"><img src="${path}/resources/images/음료수/HK)티로그복숭아홍차P500.jpg"/><div>HK)티로그복숭아홍차P500</div><div>2200원</div></a>
         </div>
     </div>
 </body>

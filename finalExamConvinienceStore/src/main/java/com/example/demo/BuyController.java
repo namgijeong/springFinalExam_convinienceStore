@@ -1,12 +1,19 @@
 package com.example.demo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import myapp.domain.Product;
+import myapp.service.impl.ProductServiceImpl;
 
 @Controller
 public class BuyController {
-
-
+	
+		@Autowired
+		ProductServiceImpl productServiceImpl;
 	
 	  @RequestMapping(value="/buy_beverage") 
 	  public String buyBeverage() {
@@ -34,7 +41,10 @@ public class BuyController {
 	  }
 	  
 	  @RequestMapping(value="/product_detail") 
-	  public String productDetail() {
+	  public String productDetail(@RequestParam(value="inventory_code")int inventoryCode,Model model) {
+		  Product resultProduct;
+		  resultProduct=productServiceImpl.getProductInfo(inventoryCode);
+		  model.addAttribute("Product",resultProduct);
 		  return "buy/product_detail"; 
 	  }
 	 
