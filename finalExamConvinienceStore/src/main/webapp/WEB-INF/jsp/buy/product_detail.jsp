@@ -56,16 +56,27 @@
      
     //window.onload는 DOM뿐만 아니라 리소스 호출도 완료되었을 때 실행
         //$(window).onload()는 jquery에서 틀린문법인지 인식안됨
+        
+         var msg = "<c:out value='${msg}'/>";
+         if(msg!==''){
+        	 alert(msg);
+         }
+    	
+        let sendCount;
         $(window).on("load",function(){
             //10진법 숫자로
             let count=parseInt($("#count").attr('value'),10);
             let cost=parseInt($("#show_cost>td:nth-child(2)").text());
+            //버튼 하나도 안건드렸을때 초기값 가져옴
+            sendCount=count;
             $("#select_count>td:nth-child(2)>img:nth-child(1)").on('click',function(e){
                 //무조건 최소 숫자가 1이 나오게
                 if(count>=2){
                     count=count-1;
                     $("#count").attr('value',count);
                     $("#total>span:nth-child(2)").text(count*cost);
+                    //실시간으로 바뀌는 count를 보내기 위해서
+                    sendCount=count;
                 }
                
             });
@@ -74,8 +85,15 @@
                 count=count+1;
                 $("#count").attr('value',count);
                 $("#total>span:nth-child(2)").text(count*cost);
+                //실시간으로 바뀌는 count를 보내기 위해서
+                sendCount=count;
                 
             });
-
+            
+            let inventoryCode="${Product.inventoryCode}";
+			
+            $("#purchase>button").on('click',function(e){
+            	location.href="/buyOk?inventoryCode="+inventoryCode+"&count="+sendCount;
+            });
         });
 </script>

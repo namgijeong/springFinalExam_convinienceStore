@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="myapp.dao.SalesListDao">
+	
+	
+	<insert id="insertSalesList" parameterType="SalesList">
+		insert into tbl_sales_list(member_id,inventory_code,sales_date,count)
+		values(#{memberId},#{inventoryCode},#{salesDate},#{count})
+	</insert>
+	
+	
+	
+</mapper>

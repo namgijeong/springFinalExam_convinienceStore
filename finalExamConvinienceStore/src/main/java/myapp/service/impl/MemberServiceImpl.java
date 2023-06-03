@@ -28,4 +28,6 @@ public class MemberServiceImpl implements MemberService{
 		return memberDao.findById(id);
 	}
 
+
+
 }

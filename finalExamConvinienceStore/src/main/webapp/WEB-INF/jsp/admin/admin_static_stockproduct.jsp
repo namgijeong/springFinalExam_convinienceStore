@@ -99,7 +99,7 @@
 
                 <div id="select_count">
 
-                    <select>
+                    <select id="stock_list">
                         <option value="1001">오뚜기)진라면매운컵</option>
                         <option value="1002">농심)신라면큰사발컵</option>
                         <option value="1003">오뚜기)열라면컵</option>
@@ -244,16 +244,23 @@ $(document).ready(function(){
 </script>
     
 <script>
+let stockChoose;
+let stockCount;
     $(window).on("load",function(){
             //10진법 숫자로
             let count=parseInt($("#count").attr('value'),10);
-            let cost=parseInt($("#show_cost>div:nth-child(3)").text());
+            //버튼 하나도 안건드렸을때 초기값
+            stockChoose= $("#stock_list option:selected").val();
+            stockCount=$("#count").attr('value');
             $("#select_count>div:nth-child(3)>img:nth-child(1)").on('click',function(e){
                 //무조건 최소 숫자가 1이 나오게
                 if(count>=2){
                     count=count-1;
                     $("#count").attr('value',count);
                     
+                    //눌러서 바뀔때마다 재고 값도 바꿔져야하므로
+                    stockChoose= $("#stock_list option:selected").val();
+                    stockCount=$("#count").attr('value');
                 }
                
             });
@@ -262,7 +269,16 @@ $(document).ready(function(){
                 count=count+1;
                 $("#count").attr('value',count);
                 
-                
+              	//눌러서 바뀔때마다 재고 값도 바꿔져야하므로
+                stockChoose= $("#stock_list option:selected").val();
+                stockCount=$("#count").attr('value');
+            });
+            
+          
+            $("#input_product>button").on('click',function(e){
+            	/*변수를 인식해야하므로 ""안에 다 넣지 말자*/
+            	location.href="/admin_stockproductOk?inventoryCode="+stockChoose+"&count="+stockCount;
+            	
             });
 
         });

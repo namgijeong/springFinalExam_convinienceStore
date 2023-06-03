@@ -2,7 +2,7 @@
     pageEncoding="utf-8" session="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
-<c:set var="login_fail" value="${login_fail}"/>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +41,8 @@
 </body>
 </html>
 <script type="text/javascript">
-	let login_fail="${login_fail}";
+	let login_fail="${loginFail}";
+	console.log(login_fail);
 	 if(login_fail == "fail"){
 		alert("로그인 실패");
 	} 

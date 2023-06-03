@@ -4,14 +4,16 @@
 <mapper namespace="myapp.dao.MemberDao">
 	
 	
-	
-
-	
-	
 	<select id="findById" parameterType="string" resultType="Member">
 		select *
 		from tbl_member
 		where member_id=#{id}
+	</select>
+	
+	<select id="findIdByPrimaryId" parameterType="int" resultType="Member">
+		select member_id
+		from tbl_member
+		where primary_id=#{primaryId}
 	</select>
 	
 	

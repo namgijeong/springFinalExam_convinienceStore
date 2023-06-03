@@ -10,6 +10,8 @@
 		
 		<typeAlias type="myapp.domain.Member" alias="Member" />
 		<typeAlias type="myapp.domain.Product" alias="Product" />
+		<typeAlias type="myapp.domain.Inventory" alias="Inventory" />
+		<typeAlias type="myapp.domain.SalesList" alias="SalesList" />
 	</typeAliases>
 	
 	
@@ -17,6 +19,8 @@
 		
 		<mapper class="myapp.dao.MemberDao" />
 		<mapper class="myapp.dao.ProductDao" />
+		<mapper class="myapp.dao.InventoryDao" />
+		<mapper class="myapp.dao.SalesListDao" />
 	</mappers>
 	
 </configuration>

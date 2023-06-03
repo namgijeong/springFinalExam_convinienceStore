@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="myapp.dao.InventoryDao">
+	
+	
+	<insert id="inventoryAdd" parameterType="Inventory" >
+		insert into tbl_inventory(inventory_code,come_in_date,count)
+		values(#{inventoryCode},#{comeInDate},#{count})
+	</insert>
+	
+	
+	<select id="getPlusCountByInventoryCode" parameterType="int" resultType="int" >
+		select ifnull(sum(count),0)
+		from tbl_inventory
+		where inventory_code=#{inventoryCode} and come_in_date is not null 
+	</select>
+	
+	<select id="getMinusCountByInventoryCode" parameterType="int" resultType="int" >
+		select ifnull(sum(count),0)
+		from tbl_inventory
+		where inventory_code=#{inventoryCode} and out_in_date is not null 
+	</select>
+	
+	<insert id="inventoryMinus" parameterType="Inventory" >
+		insert into tbl_inventory(inventory_code,out_in_date,count)
+		values(#{inventoryCode},#{outInDate},#{count})
+	</insert>
+	
+	
+	
+</mapper>

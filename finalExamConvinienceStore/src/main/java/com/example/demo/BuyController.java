@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,12 +10,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import myapp.domain.Product;
 import myapp.service.impl.ProductServiceImpl;
+import myapp.service.impl.SalesListServiceImpl;
 
 @Controller
 public class BuyController {
 	
 		@Autowired
 		ProductServiceImpl productServiceImpl;
+		@Autowired
+		SalesListServiceImpl salesListServiceImpl;
 	
 	  @RequestMapping(value="/buy_beverage") 
 	  public String buyBeverage() {
@@ -48,4 +53,14 @@ public class BuyController {
 		  return "buy/product_detail"; 
 	  }
 	 
+	  @RequestMapping(value="/buyOk") 
+	  public String buyOk(HttpServletRequest request,@RequestParam(value="inventoryCode")int inventoryCode,@RequestParam(value="count")int count) {
+		  System.out.println("구입할 inventoryCode"+inventoryCode);
+		  System.out.println("구입할 count"+count);
+		  //이전 페이지로 리다이렉트 시키기
+		  //String referer = request.getHeader("Referer");
+		  //"redirect:"+referer;
+		  salesListServiceImpl.purchase(inventoryCode, count,request);
+		  return "redirect:/product_detail?inventory_code="+inventoryCode;
+	  }
 }

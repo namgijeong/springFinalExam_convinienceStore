@@ -54,7 +54,7 @@ public class LoginController {
 			  return result;
 		  }
 		  else {
-			  result.addObject("login_fail", "fail");
+			  result.addObject("loginFail", "fail");
 		
 				 result.setViewName("redirect:/login");
 				  return result; 

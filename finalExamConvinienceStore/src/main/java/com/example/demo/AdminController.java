@@ -5,14 +5,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import myapp.dao.MemberDao;
+import myapp.service.impl.InventoryServiceImpl;
 
 
 @Controller
 public class AdminController {
 	
-	
+	@Autowired
+	InventoryServiceImpl inventoryServiceImpl;
 	
 	@RequestMapping(value="/admin_dailycost")
 	public String adminDailyCost() {
@@ -39,8 +42,16 @@ public class AdminController {
 		return "admin/admin_static_monthlycount";
 	}
 	
+	
 	@RequestMapping(value="/admin_stockproduct")
 	public String adminStockProduct() {
 		return "admin/admin_static_stockproduct";
+	}
+	@RequestMapping(value="/admin_stockproductOk")
+	public String adminStockProductOk(@RequestParam(value="inventoryCode")int inventoryCode,@RequestParam(value="count")int count) {
+		
+		
+		inventoryServiceImpl.inventoryAdd(inventoryCode, count);
+		return "redirect:/admin_stockproduct";
 	}
 }
