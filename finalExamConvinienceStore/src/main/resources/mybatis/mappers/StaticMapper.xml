@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="myapp.dao.StaticDao">
+	
+	
+	<select id="oneDaySaleCountKNoodle" parameterType="date" resultType="OneDaySaleCountProduct" >
+		<![CDATA[
+			select ifnull(sum(count),0) as count
+			from tbl_sales_list
+			where sales_date=#{searchDay} and inventory_code>=1001 and inventory_code<=1008
+		
+		]]>  
+	</select>
+	
+	<select id="oneDaySaleCountRice" parameterType="date" resultType="OneDaySaleCountProduct" >
+		<![CDATA[
+			select ifnull(sum(count),0) as count
+			from tbl_sales_list
+			where sales_date=#{searchDay} and inventory_code>=2001 and inventory_code<=2008
+		
+		]]>  
+	</select>
+	
+	<select id="oneDaySaleCountSnack" parameterType="date" resultType="OneDaySaleCountProduct" >
+		<![CDATA[
+			select ifnull(sum(count),0) as count
+			from tbl_sales_list
+			where sales_date=#{searchDay} and inventory_code>=3001 and inventory_code<=3008
+		
+		]]>  
+	</select>
+	
+	<select id="oneDaySaleCountBeverage" parameterType="date" resultType="OneDaySaleCountProduct" >
+		<![CDATA[
+			select ifnull(sum(count),0) as count
+			from tbl_sales_list
+			where sales_date=#{searchDay} and inventory_code>=4001 and inventory_code<=4008
+		
+		]]>  
+	</select>
+	
+	<select id="oneDaySaleCountIcecream" parameterType="date" resultType="OneDaySaleCountProduct" >
+		<![CDATA[
+			select ifnull(sum(count),0) as count
+			from tbl_sales_list
+			where sales_date=#{searchDay} and inventory_code>=5001 and inventory_code<=5008
+		
+		]]>  
+	</select>
+	
+	
+</mapper>

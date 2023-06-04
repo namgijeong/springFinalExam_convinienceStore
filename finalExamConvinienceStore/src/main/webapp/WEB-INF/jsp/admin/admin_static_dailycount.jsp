@@ -101,8 +101,8 @@
                 
                 <div id="subnavigation_search_and_delete">
                     <div id="subnavigation_search">
-                        <span></span>
-                        <input type="text" name="search_member" placeholder="검색"/>
+                        <span id="glass"></span>
+                        <input id="keyword" type="text" name="search_member" placeholder="검색"/>
                     </div>
                     
                 </div>
@@ -213,69 +213,123 @@ $(document).ready(function(){
     
 });
 </script>
-    
+<!-- 외부 자바스크립트 포함할때  하나 열고닫는 거 각각 써주지 않고 하나로 합치면 인식을 잘 못한다... -->
+<script src="${path}/resources/javascript/staticQueryAjax.js" ></script>    
 <script>
-     var context = document
-                .getElementById('myChart')
-                .getContext('2d');
-            var myChart = new Chart(context, {
-                type: 'bar', // 차트의 형태
-                data: { // 차트에 들어갈 데이터
-                    labels: [
-                        //x 축
-                        '과자','라면','밥','아이스크림','음료수'
-                    ],
-                    datasets: [
-                        { //데이터
-                            label: '품목별 하루 판매량', //차트 제목
-                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
-                            data: [
-                                //여기에 데이터들을 넣어주자
-                                21,19,25,20,23,26,25 //x축 label에 대응되는 데이터 값
-                            ],
-                            backgroundColor: [
-                                //색상
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
-                            ],
-                            borderColor: [
-                                //경계선 색상
-                                'rgba(255, 99, 132, 1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
-                            ],
-                            borderWidth: 1 //경계선 굵기
-                        }/* ,
-                        {
-                            label: 'test2',
-                            fill: false,
-                            data: [
-                                8, 34, 12, 24
-                            ],
-                            backgroundColor: 'rgb(157, 109, 12)',
-                            borderColor: 'rgb(157, 109, 12)'
-                        } */
-                    ]
-                },
-                options: {
-                    scales: {
-                        yAxes: [
-                            {
-                                ticks: {
-                                    beginAtZero: true
-                                }
-                            }
-                        ]
-                    }
-                }
-            });
-</script>
+	let kNoodle;
+	let rice;
+	let snack;
+	let beverage;
+	let icecream;
+	function classify (datas){
+		kNoodle=datas[0].count;
+		console.log("kNoodle"+kNoodle);
+		rice=datas[1].count;
+		console.log("rice"+rice);
+		snack=datas[2].count;
+		console.log("snack"+snack);
+		beverage=datas[3].count;
+		console.log("beverage"+beverage);
+		icecream=datas[4].count;
+		console.log("icecream"+icecream);
+		
+		/*이 라이브러리 데이터에 변수를 넣고 싶으면 이렇게 해야한다*/
+		
+		myChart.data.datasets[0].data[0]=kNoodle;
+		myChart.data.datasets[0].data[1]=rice;
+		myChart.data.datasets[0].data[2]=snack;
+		myChart.data.datasets[0].data[3]=beverage;
+		myChart.data.datasets[0].data[4]=icecream;
+	
+		myChart.update();
+	
+	}
+	
 
+	
+	function error(error){
+		console.log(error);
+	}
+	
+	
+	
+	$(document).ready(function(){
+		
+		$("#glass").click(function(e){
+			console.log("돋보기버튼누름");
+			/* 이상하게 이건 인식이 안됨. 
+			let searchDay=$("#keyword").attr('value'); */
+			let searchDay=$("#keyword").val();
+			
+			console.log($("#keyword").val());
+			staticAjax.oneDaySaleCount(searchDay,classify,error);
+			
+			
+		});
+	});
+		 var context = document
+	        .getElementById('myChart')
+	        .getContext('2d');
+	    var myChart = new Chart(context, {
+	        type: 'bar', // 차트의 형태
+	        data: { // 차트에 들어갈 데이터
+	            labels: [
+	                //x 축
+	                '라면','밥','과자','음료수','아이스크림'
+	            ],
+	            datasets: [
+	                { //데이터
+	                    label: '품목별 하루 판매량', //차트 제목
+	                    fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+	                    data: [
+	                        //여기에 데이터들을 넣어주자
+	                       kNoodle,rice,snack,beverage,icecream //x축 label에 대응되는 데이터 값
+	                    ],
+	                    backgroundColor: [
+	                        //색상
+	                        'rgba(255, 99, 132, 0.2)',
+	                        'rgba(54, 162, 235, 0.2)',
+	                        'rgba(255, 206, 86, 0.2)',
+	                        'rgba(75, 192, 192, 0.2)',
+	                        'rgba(153, 102, 255, 0.2)',
+	                        'rgba(255, 159, 64, 0.2)'
+	                    ],
+	                    borderColor: [
+	                        //경계선 색상
+	                        'rgba(255, 99, 132, 1)',
+	                        'rgba(54, 162, 235, 1)',
+	                        'rgba(255, 206, 86, 1)',
+	                        'rgba(75, 192, 192, 1)',
+	                        'rgba(153, 102, 255, 1)',
+	                        'rgba(255, 159, 64, 1)'
+	                    ],
+	                    borderWidth: 1 //경계선 굵기
+	                }/* ,
+	                {
+	                    label: 'test2',
+	                    fill: false,
+	                    data: [
+	                        8, 34, 12, 24
+	                    ],
+	                    backgroundColor: 'rgb(157, 109, 12)',
+	                    borderColor: 'rgb(157, 109, 12)'
+	                } */
+	            ]
+	        },
+	        options: {
+	            scales: {
+	                yAxes: [
+	                    {
+	                        ticks: {
+	                            beginAtZero: true
+	                        }
+	                    }
+	                ]
+	            }
+	        }
+	    });	
+	
+		
+    
+</script>
 </html>

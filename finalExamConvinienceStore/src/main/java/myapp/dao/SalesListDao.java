@@ -1,7 +1,9 @@
 package myapp.dao;
 
-import myapp.domain.SalesList;
+import org.apache.ibatis.annotations.Mapper;
 
+import myapp.domain.SalesList;
+@Mapper
 public interface SalesListDao {
 	void insertSalesList(SalesList salesList);
 }

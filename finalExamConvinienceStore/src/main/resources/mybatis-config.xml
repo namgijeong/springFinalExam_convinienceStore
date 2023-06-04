@@ -12,6 +12,7 @@
 		<typeAlias type="myapp.domain.Product" alias="Product" />
 		<typeAlias type="myapp.domain.Inventory" alias="Inventory" />
 		<typeAlias type="myapp.domain.SalesList" alias="SalesList" />
+		<typeAlias type="myapp.domain.OneDaySaleCountProduct" alias="OneDaySaleCountProduct" />
 	</typeAliases>
 	
 	
@@ -21,6 +22,7 @@
 		<mapper class="myapp.dao.ProductDao" />
 		<mapper class="myapp.dao.InventoryDao" />
 		<mapper class="myapp.dao.SalesListDao" />
+		<mapper class="myapp.dao.StaticDao" />
 	</mappers>
 	
 </configuration>
