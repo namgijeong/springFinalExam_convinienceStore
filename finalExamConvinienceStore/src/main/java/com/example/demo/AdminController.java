@@ -32,15 +32,13 @@ public class AdminController {
 		return "admin/admin_static_firstproduct";
 	}
 	
-	@RequestMapping(value="/admin_monthlycost")
-	public String adminMonthlyCost() {
-		return "admin/admin_static_monthlycost";
-	}
-	
-	@RequestMapping(value="/admin_monthlycount")
-	public String adminMonthlyCount() {
-		return "admin/admin_static_monthlycount";
-	}
+	/*
+	 * @RequestMapping(value="/admin_monthlycost") public String adminMonthlyCost()
+	 * { return "admin/admin_static_monthlycost"; }
+	 * 
+	 * @RequestMapping(value="/admin_monthlycount") public String
+	 * adminMonthlyCount() { return "admin/admin_static_monthlycount"; }
+	 */
 	
 	
 	@RequestMapping(value="/admin_stockproduct")

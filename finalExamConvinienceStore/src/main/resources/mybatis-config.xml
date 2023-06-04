@@ -13,6 +13,7 @@
 		<typeAlias type="myapp.domain.Inventory" alias="Inventory" />
 		<typeAlias type="myapp.domain.SalesList" alias="SalesList" />
 		<typeAlias type="myapp.domain.OneDaySaleCountProduct" alias="OneDaySaleCountProduct" />
+		<typeAlias type="myapp.domain.OneDaySaleCostProduct" alias="OneDaySaleCostProduct" />
 	</typeAliases>
 	
 	

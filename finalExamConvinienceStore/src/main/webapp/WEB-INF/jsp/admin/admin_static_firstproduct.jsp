@@ -31,14 +31,14 @@
                     </ul>
                 </li>
                 
-                <li class="menu"> 
+                <%-- <li class="menu"> 
                     <a><span>한달</span><span class="rightarrow"></span></a>
                     <ul class="hide">
                         <li class="normalcolor"><a href="${path}/admin_monthlycount">판매량</a></li>
                         <li class="normalcolor"><a href="${path}/admin_monthlycost">매출액</a></li>
                         
                     </ul>
-                </li>
+                </li> --%>
                 
                 <li class="menu"> 
                     <a href="${path}/admin_firstproduct"><span>최다 판매제품</span><span class="rightarrow"></span></a>
@@ -62,7 +62,7 @@
             <div id="subnavigation_result_header">
                 <div id="subnavigation_result_title">
                     <h2>최다판매제품</h2>
-                    <span>yyyy-mm-dd 형식으로 입력해주세요</span>
+                    <span>undefined는 상품을 구매하지 않아 해당 순위가 없는것이다.</span>
                 </div>
                 <!-- <div id="subnavigation_how_array">
                     <div class="subnavigation_how">
@@ -98,13 +98,13 @@
             <div id="subnavigation_result_body">
 
                 
-                <div id="subnavigation_search_and_delete">
+                <!-- <div id="subnavigation_search_and_delete">
                     <div id="subnavigation_search">
-                        <span></span>
-                        <input type="text" name="search_member" placeholder="검색"/>
+                        <span id="glass"></span>
+                        <input id="keyword" type="text" name="search_member" placeholder="검색"/>
                     </div>
                     
-                </div>
+                </div> -->
 
                 <!--차트가 그려질 부분-->
 	            <canvas id="myChart"></canvas>
@@ -213,68 +213,129 @@ $(document).ready(function(){
 });
 </script>
     
+<!-- 외부 자바스크립트 포함할때  하나 열고닫는 거 각각 써주지 않고 하나로 합치면 인식을 잘 못한다... -->
+<script src="${path}/resources/javascript/staticQueryAjax.js" ></script>    
 <script>
-     var context = document
-                .getElementById('myChart')
-                .getContext('2d');
-            var myChart = new Chart(context, {
-                type: 'bar', // 차트의 형태
-                data: { // 차트에 들어갈 데이터
-                    labels: [
-                        //x 축
-                        '판매량','매출액'
-                    ],
-                    datasets: [
-                        { //데이터
-                            label: '최다 판매제품', //차트 제목
-                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
-                            data: [
-                                //여기에 데이터들을 넣어주자
-                                21,19 //x축 label에 대응되는 데이터 값
-                            ],
-                            backgroundColor: [
-                                //색상
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
-                            ],
-                            borderColor: [
-                                //경계선 색상
-                                'rgba(255, 99, 132, 1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
-                            ],
-                            borderWidth: 1 //경계선 굵기
-                        }/* ,
-                        {
-                            label: 'test2',
-                            fill: false,
-                            data: [
-                                8, 34, 12, 24
-                            ],
-                            backgroundColor: 'rgb(157, 109, 12)',
-                            borderColor: 'rgb(157, 109, 12)'
-                        } */
-                    ]
-                },
-                options: {
-                    scales: {
-                        yAxes: [
-                            {
-                                ticks: {
-                                    beginAtZero: true
-                                }
-                            }
-                        ]
-                    }
-                }
-            });
+	let firstProduct;
+	let firstProductName;
+	let secondProduct;
+	let secondProductName;
+	let thirdProduct;
+	let thirdProductName;
+	function classify (datas){
+		if(datas[0]!=null){
+			firstProduct=datas[0].count;
+			firstProductName=datas[0].productCategory;
+		}
+		if(datas[1]!=null){
+			secondProduct=datas[1].count;
+			secondProductName=datas[1].productCategory;
+		}
+		if(datas[2]!=null){
+			thirdProduct=datas[2].count;
+			thirdProductName=datas[2].productCategory;
+		}
+		/*이 라이브러리 데이터에 변수를 넣고 싶으면 이렇게 해야한다*/
+		
+		myChart.data.datasets[0].data[0]=firstProduct;
+		myChart.data.datasets[0].data[1]=secondProduct;
+		myChart.data.datasets[0].data[2]=thirdProduct;
+		
+		myChart.data.labels[0]=firstProductName;
+		myChart.data.labels[1]=secondProductName;
+		myChart.data.labels[2]=thirdProductName;
+	
+		myChart.update();
+	
+	}
+	
+
+	
+	function error(error){
+		console.log(error);
+	}
+	
+	staticAjax.firstProduct(classify,error);
+	
+	/* $(document).ready(function(){
+		
+		$("#glass").click(function(e){
+			console.log("돋보기버튼누름");
+			 이상하게 이건 인식이 안됨. 
+			let searchDay=$("#keyword").attr('value'); 
+			let searchDay=$("#keyword").val();
+			
+			console.log($("#keyword").val());
+			
+			
+			
+		});
+	});
+	*/
+		 var context = document
+	        .getElementById('myChart')
+	        .getContext('2d');
+	    var myChart = new Chart(context, {
+	        type: 'bar', // 차트의 형태
+	        data: { // 차트에 들어갈 데이터
+	            labels: [
+	                //x 축
+	                '라면','밥','과자'
+	            ],
+	            datasets: [
+	                { //데이터
+	                    label: '가장 많이 팔린 최다품목 상위 3개', //차트 제목
+	                    fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+	                    data: [
+	                        //여기에 데이터들을 넣어주자
+	                        firstProduct,secondProduct,thirdProduct//x축 label에 대응되는 데이터 값
+	                    ],
+	                    backgroundColor: [
+	                        //색상
+	                        'rgba(255, 99, 132, 0.2)',
+	                        'rgba(54, 162, 235, 0.2)',
+	                        'rgba(255, 206, 86, 0.2)',
+	                        'rgba(75, 192, 192, 0.2)',
+	                        'rgba(153, 102, 255, 0.2)',
+	                        'rgba(255, 159, 64, 0.2)'
+	                    ],
+	                    borderColor: [
+	                        //경계선 색상
+	                        'rgba(255, 99, 132, 1)',
+	                        'rgba(54, 162, 235, 1)',
+	                        'rgba(255, 206, 86, 1)',
+	                        'rgba(75, 192, 192, 1)',
+	                        'rgba(153, 102, 255, 1)',
+	                        'rgba(255, 159, 64, 1)'
+	                    ],
+	                    borderWidth: 1 //경계선 굵기
+	                }/* ,
+	                {
+	                    label: 'test2',
+	                    fill: false,
+	                    data: [
+	                        8, 34, 12, 24
+	                    ],
+	                    backgroundColor: 'rgb(157, 109, 12)',
+	                    borderColor: 'rgb(157, 109, 12)'
+	                } */
+	            ]
+	        },
+	        options: {
+	            scales: {
+	                yAxes: [
+	                    {
+	                        ticks: {
+	                            beginAtZero: true
+	                        }
+	                    }
+	                ]
+	            }
+	        }
+	    });	
+	
+		
+    
 </script>
 
 </html>

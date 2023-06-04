@@ -31,14 +31,14 @@
                     </ul>
                 </li>
                 
-                <li class="menu"> 
+                <%-- <li class="menu"> 
                     <a><span>한달</span><span class="rightarrow"></span></a>
                     <ul class="hide">
                         <li class="normalcolor"><a href="${path}/admin_monthlycount">판매량</a></li>
                         <li class="normalcolor"><a href="${path}/admin_monthlycost">매출액</a></li>
                         
                     </ul>
-                </li>
+                </li> --%>
                 
                 <li class="menu"> 
                     <a href="${path}/admin_firstproduct"><span>최다 판매제품</span><span class="rightarrow"></span></a>

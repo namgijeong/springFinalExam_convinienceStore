@@ -49,5 +49,61 @@
 		]]>  
 	</select>
 	
+	<select id="oneDaySaleCostKNoodle" parameterType="date" resultType="OneDaySaleCostProduct" >
+		<![CDATA[
+			select ifnull(sum(s.count * d.price),0) as cost
+			from tbl_sales_list as s inner join define_inventory_code as d
+			on s.inventory_code=d.inventory_code
+			where sales_date=#{searchDay} and s.inventory_code>=1001 and s.inventory_code<=1008
+		]]>  
+	</select>
+	
+	<select id="oneDaySaleCostRice" parameterType="date" resultType="OneDaySaleCostProduct" >
+		<![CDATA[
+			select ifnull(sum(s.count * d.price),0) as cost
+			from tbl_sales_list as s inner join define_inventory_code as d
+			on s.inventory_code=d.inventory_code
+			where sales_date=#{searchDay} and s.inventory_code>=2001 and s.inventory_code<=2008
+		]]>  
+	</select>
+	
+	<select id="oneDaySaleCostSnack" parameterType="date" resultType="OneDaySaleCostProduct" >
+		<![CDATA[
+			select ifnull(sum(s.count * d.price),0) as cost
+			from tbl_sales_list as s inner join define_inventory_code as d
+			on s.inventory_code=d.inventory_code
+			where sales_date=#{searchDay} and s.inventory_code>=3001 and s.inventory_code<=3008
+		]]>  
+	</select>
+	
+	<select id="oneDaySaleCostBeverage" parameterType="date" resultType="OneDaySaleCostProduct" >
+		<![CDATA[
+			select ifnull(sum(s.count * d.price),0) as cost
+			from tbl_sales_list as s inner join define_inventory_code as d
+			on s.inventory_code=d.inventory_code
+			where sales_date=#{searchDay} and s.inventory_code>=4001 and s.inventory_code<=4008
+		]]>  
+	</select>
+	
+	<select id="oneDaySaleCostIcecream" parameterType="date" resultType="OneDaySaleCostProduct" >
+		<![CDATA[
+			select ifnull(sum(s.count * d.price),0) as cost
+			from tbl_sales_list as s inner join define_inventory_code as d
+			on s.inventory_code=d.inventory_code
+			where sales_date=#{searchDay} and s.inventory_code>=5001 and s.inventory_code<=5008
+		]]>  
+	</select>
+	
+	<select id="firstProduct" resultType="OneDaySaleCountProduct" >
+		<![CDATA[
+			select ifnull(sum(s.count),0) as count , inventory_name as product_category
+			from tbl_sales_list as s inner join define_inventory_code as d
+			on s.inventory_code=d.inventory_code
+			group by s.inventory_code
+			order by count desc , s.inventory_code asc
+			limit 3
+
+		]]>  
+	</select>
 	
 </mapper>
