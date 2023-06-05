@@ -17,5 +17,16 @@
 	</select>
 	
 	
+	<select id="getPasswordByPrimaryId" parameterType="int" resultType="Member">
+		select password
+		from tbl_member
+		where primary_id=#{primaryId}
+	</select>
+	
+	<select id="doubleCheckId" parameterType="string" resultType="int">
+		select count(name)
+		from tbl_member
+		where member_id=#{inputId}
+	</select>
 	
 </mapper>

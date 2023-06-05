@@ -73,16 +73,28 @@
 		});
 	});
 </script>
-
+<script src="${path}/resources/javascript/idDoubleCheckAjax.js"></script>
 <script>
     $(window).on("load",function(){
-        change_id=$(".login_input:eq(0)");
-        //비동기 통신으로 아이디가 db에 있는지 조회
-        //값이 있으면
-           /*  $("#login_content>div>div").addClass('how_warning_id'); */
-        //값이 없으면
-            /* $("#login_content>div>div").removeClass('how_warning_id'); */
+       
+        $(".login_input:eq(0)").on('change',function(e){
+        	let inputId=$(this).val();
+        	idDoubleCheckAjax.idDoubleCheck(inputId,currentCheck,error)
+        });
         
+        let currentCheck=function(datas){
+        	console.log(datas);
+        	if(datas==1){
+        		 $("#login_content>div>div").addClass('show_warning_id');
+        	}
+        	else{
+        		$("#login_content>div>div").removeClass('show_warning_id'); 
+        	}
+        };
+        let error=function(datas){
+        	console.log(datas);
+        }
+       
     
     });
 </script>

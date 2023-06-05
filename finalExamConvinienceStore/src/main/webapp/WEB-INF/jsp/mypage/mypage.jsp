@@ -30,7 +30,7 @@
                 <div>
                     <span class="login_subtitle">현재 내 비밀번호</span><input class="login_input" type="password" placeholder="비밀번호"/>
                 </div>
-                <button id="gologin" type="button" onclick="location.href='${path}/mypage_update'">수정하기</button>
+                <button id="gologin" type="button" >수정하기</button>
             </div>
         </div>
     </div>
@@ -67,6 +67,13 @@
 		    
 		    }
 		});
+		
+		
+		$("#gologin").on('click',function(e){
+			let inputpassword=$("input[type=password]").val();
+			location.href="/mypageOk?password="+inputpassword;
+		});
+		
 	});
 </script>
             

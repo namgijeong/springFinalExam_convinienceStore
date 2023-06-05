@@ -28,6 +28,21 @@ public class MemberServiceImpl implements MemberService{
 		return memberDao.findById(id);
 	}
 
+	@Override
+	public int confirmCurrentPassword(int primaryId, String inputPassword) {
+		
+		Member member =memberDao.getPasswordByPrimaryId(primaryId);
+		String correctPassword= member.getPassword();
+		if(inputPassword.equals(correctPassword)) {
+			
+			return 1;
+		}
+		else {
+			return 0;
+		}
+		
+	}
+
 
 
 }

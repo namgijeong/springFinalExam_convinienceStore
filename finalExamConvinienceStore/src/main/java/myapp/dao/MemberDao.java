@@ -10,4 +10,6 @@ public interface MemberDao {
 	void update(Member member);
 	Member findById(String id);
 	Member findIdByPrimaryId(int primaryId);
+	Member getPasswordByPrimaryId(int primaryId);
+	int doubleCheckId(String inputId);
 }
