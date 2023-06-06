@@ -28,7 +28,7 @@
             <div id="login_title">내 계정정보 바꾸기</div>
             <div id="login_content">
                 <div>
-                    <span class="login_subtitle">아이디</span><input class="login_input" type="text" placeholder="아이디"/>
+                    <span class="login_subtitle">아이디</span><input value="${currentMember.memberId}" class="login_input" type="text" placeholder="아이디"/>
                     <div>아이디가 중복됩니다.</div>
                 </div>
                 <div>
@@ -75,27 +75,44 @@
 </script>
 <script src="${path}/resources/javascript/idDoubleCheckAjax.js"></script>
 <script>
+	let inputId;
     $(window).on("load",function(){
        
         $(".login_input:eq(0)").on('change',function(e){
-        	let inputId=$(this).val();
+        	inputId=$(this).val();
         	idDoubleCheckAjax.idDoubleCheck(inputId,currentCheck,error)
         });
         
         let currentCheck=function(datas){
         	console.log(datas);
-        	if(datas==1){
-        		 $("#login_content>div>div").addClass('show_warning_id');
+        	/*원래 자기아이디는 기존에 자기가 쓰던거라서 db에서 중복됬다고 나오는데 그대로 써도 괜찮다.*/
+        	if(datas==1 && inputId !="${currentMember.memberId}"){
+        	
+        		$("#login_content>div>div").css('visibility','visible');
+        		/*이상하게 클래스로 같은 css 속성을 접근해서 변경하는건 충돌이 일어나는지 안된다.->직접접근 필요*/
+        		 /* $("#login_content>div>div").addClass('show_warning_id'); */
+        		 
+        		/*버튼 기능 비활성화.*/
+        		$("#gologin").attr("disabled", true);
         	}
         	else{
-        		$("#login_content>div>div").removeClass('show_warning_id'); 
+        		$("#login_content>div>div").css('visibility','hidden');
+        		/*이상하게 클래스로 같은 css 속성을 접근해서 변경하는건 충돌이 일어나는지 안된다.->직접접근 필요*/
+        		/* $("#login_content>div>div").removeClass('show_warning_id');  */
+        		
+        		/*버튼 기능 활성화.*/
+        		$("#gologin").attr("disabled", false);
         	}
         };
         let error=function(datas){
         	console.log(datas);
         }
-       
-    
+       	
+        $("#gologin").on('click',function(e){
+        	let memberId=$(".login_input:eq(0)").val();
+        	let password=$(".login_input:eq(1)").val();
+        	location.href="/mypage_updateOk?memberId="+memberId+"&password="+password;
+        });
     });
 </script>
             

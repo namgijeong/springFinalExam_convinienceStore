@@ -29,4 +29,10 @@
 		where member_id=#{inputId}
 	</select>
 	
+	<update id="update" parameterType="Member">
+		update tbl_member
+		set member_id=#{memberId} , password=#{password}
+		where primary_id=#{primaryId}
+	</update>
+	
 </mapper>

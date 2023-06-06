@@ -57,7 +57,8 @@
     //window.onload는 DOM뿐만 아니라 리소스 호출도 완료되었을 때 실행
         //$(window).onload()는 jquery에서 틀린문법인지 인식안됨
         
-         var msg = "<c:out value='${msg}'/>";
+         let msg = "${msg}";
+         console.log(msg);
          if(msg!==''){
         	 alert(msg);
          }

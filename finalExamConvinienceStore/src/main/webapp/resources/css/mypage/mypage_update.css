@@ -59,7 +59,8 @@
 
     margin:0 auto;
 
-     display:none;
+      visibility:hidden; 
+    
 
     font-family: "HGGGothicssi","Noto Sans KR",sans-serif;
     font-weight: 400;
@@ -68,7 +69,7 @@
 
 }
 .show_warning_id{
-    display:visible;
+    visibility:visible;
 }
 #login_content>div:nth-child(2){
     margin-top:10px;
