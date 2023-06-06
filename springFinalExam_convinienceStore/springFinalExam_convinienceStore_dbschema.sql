@@ -30,6 +30,9 @@ create table tbl_inventory(
     out_in_date date ,
     count int not null
 )engine=InnoDB character set=utf8;
+select * from tbl_inventory;
+
+select * from tbl_sales_list;
 
 create table tbl_sales_list(
 	primary_id int auto_increment primary key,
@@ -41,7 +44,16 @@ create table tbl_sales_list(
     count int not null
 )engine=InnoDB character set=utf8;
 
-
+select * 
+			from tbl_sales_list as s inner join define_inventory_code as d
+			on s.inventory_code=d.inventory_code;
+            
+select ifnull(sum(s.count),0) as count , inventory_name as product_category
+			from tbl_sales_list as s inner join define_inventory_code as d
+			on s.inventory_code=d.inventory_code
+			group by s.inventory_code
+			order by count desc , s.inventory_code asc
+			limit 3;
 
 insert into tbl_member(member_id, member_type, member_active,name,password) values('kjnam',0,1,'남기정','kj2023!');
 select * from tbl_member;
