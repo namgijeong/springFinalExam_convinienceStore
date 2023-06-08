@@ -41,7 +41,7 @@ public class StaticQueryController {
 		beverage.setProductCategory("음료수");
 		oneDaySaleCountProductList.add(beverage);
 		
-		OneDaySaleCountProduct icecream=staticDao.oneDaySaleCountBeverage(searchDay);
+		OneDaySaleCountProduct icecream=staticDao.oneDaySaleCountIcecream(searchDay);
 		icecream.setProductCategory("아이스크림");
 		oneDaySaleCountProductList.add(icecream);
 		
@@ -70,7 +70,7 @@ public class StaticQueryController {
 		beverage.setProductCategory("음료수");
 		oneDaySaleCostProductList.add(beverage);
 		
-		OneDaySaleCostProduct icecream=staticDao.oneDaySaleCostBeverage(searchDay);
+		OneDaySaleCostProduct icecream=staticDao.oneDaySaleCostIcecream(searchDay);
 		icecream.setProductCategory("아이스크림");
 		oneDaySaleCostProductList.add(icecream);
 		return oneDaySaleCostProductList;
